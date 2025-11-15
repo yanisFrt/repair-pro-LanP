@@ -1,11 +1,8 @@
-/* eslint-disable */
-
 "use client";
 
-import { StepsCardCash } from "@/components/steps/StepsCardCash";
+import { StepsCardCash } from "@/components/StepsCardCash";
 import { useSubmitPayment } from "@/hooks/usePayment";
-import { type Plan } from "@/utils/features"; // Assurez-vous que ce chemin d'import est correct
-import { GenerateHash } from "@/utils/hash";
+import { type Plan } from "@/utils/features";
 import { isPhoneNumber } from "@/utils/utils";
 import { AnimatePresence, type Variants, motion } from "framer-motion";
 import {
@@ -27,7 +24,8 @@ import { CiWarning } from "react-icons/ci";
 import jsPDF from "jspdf";
 import autoTable from "jspdf-autotable";
 import { GenerateReadableRef } from "@/utils/hash";
-// Ces constantes sont nécessaires au fonctionnement interne de la modale.
+import { checkUserExists } from "@/utils/api";
+
 const PAYMENT_CONFIG = {
   baridiMob: {
     qrCodeUrl: "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=Example",
@@ -82,6 +80,14 @@ const paymentMethods = [
     name: "Espèces",
     icon: "💵",
     description: "Paiement en main propre",
+    duration: "Immédiat",
+    isDisabled: false,
+  },
+  {
+    id: "stripe",
+    name: "Stripe (En Ligne)",
+    icon: "💳",
+    description: "Paiement instantané et securisé",
     duration: "Immédiat",
     isDisabled: false,
   },
@@ -148,9 +154,15 @@ type PaymentModalProps = {
   isOpen: boolean;
   onClose: () => void;
   plan: Plan | null;
+  currentCountry: "dz" | "fr";
 };
 
-const PaymentModal = ({ isOpen, onClose, plan: selectedPlan }: PaymentModalProps) => {
+const PaymentModal = ({
+  isOpen,
+  onClose,
+  plan: selectedPlan,
+  currentCountry,
+}: PaymentModalProps) => {
   const [step, setStep] = useState<"customer" | "payment" | "upload" | "confirmation">("customer");
   const [customerInfo, setCustomerInfo] = useState<CustomerInfo>({
     name: "",
@@ -163,6 +175,8 @@ const PaymentModal = ({ isOpen, onClose, plan: selectedPlan }: PaymentModalProps
   const [proofFile, setProofFile] = useState<File | null>(null);
   const [copied, setCopied] = useState<string | null>(null);
   const [phoneValid, setPhoneValid] = useState(true);
+  const [isUserCheckingLoading, setUserCheckingLoading] = useState(false);
+  // const [isStripeLoading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const fileInputRef = useRef<HTMLInputElement>(null);
   const { submitPayment, loading: isLoading, response } = useSubmitPayment();
@@ -191,15 +205,38 @@ const PaymentModal = ({ isOpen, onClose, plan: selectedPlan }: PaymentModalProps
     setTimeout(() => setCopied(null), 2000);
   };
 
-  const handleCustomerSubmit = (e: React.FormEvent) => {
+  const handleCustomerSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    try {
+      setUserCheckingLoading(true);
+
+      const isUserExist = await checkUserExists(customerInfo.email);
+
+      if (isUserExist) {
+        toast.error(`L'utilisateur ${customerInfo.email} existe déja !`);
+        return;
+      }
+    } catch (error) {
+      toast.error(`Une erreur est survenur lors de l'opération.`);
+      return;
+    } finally {
+      setUserCheckingLoading(false);
+    }
+
     if (!phoneValid || !customerInfo.name || !customerInfo.email || !customerInfo.phone) return;
+    if (currentCountry.toLowerCase() === "fr") {
+      setPaymentMethod(paymentMethods.filter((i) => i.id === "stripe")[0]);
+      setStep("upload");
+      return;
+    }
     setStep("payment");
   };
 
   const handlePaymentMethodSelect = (method: PaymentMethod) => {
     if (method.isDisabled) return;
+
     setPaymentMethod(method);
+
     setStep("upload");
   };
 
@@ -222,14 +259,22 @@ const PaymentModal = ({ isOpen, onClose, plan: selectedPlan }: PaymentModalProps
       setStep("payment");
       return;
     }
-    if (!proofFile && paymentMethod.id !== "cash" && paymentMethod.id !== "ccp") {
+
+    if (
+      !proofFile &&
+      paymentMethod.id !== "cash" &&
+      paymentMethod.id !== "ccp" &&
+      paymentMethod.id !== "stripe"
+    ) {
       setStep("upload");
       return;
     }
 
     setStep("confirmation");
     try {
-      await submitPayment(
+      const result: {
+        url: string;
+      } = await submitPayment(
         customerInfo,
         orderReference,
         selectedPlan.name,
@@ -237,6 +282,10 @@ const PaymentModal = ({ isOpen, onClose, plan: selectedPlan }: PaymentModalProps
         paymentMethod.id,
         proofFile ?? undefined
       );
+
+      if (paymentMethod.id === "stripe") {
+        window.open(result?.url, "_blank");
+      }
     } catch (error) {
       toast.error("Une erreur est survenue lors de l'opération.");
       setStep("upload");
@@ -252,11 +301,9 @@ const PaymentModal = ({ isOpen, onClose, plan: selectedPlan }: PaymentModalProps
     );
   };
 
-  //
   if (!selectedPlan) {
     return null;
   }
-  //
 
   const generateCcpPdf = () => {
     if (!selectedPlan || !customerInfo) {
@@ -314,7 +361,14 @@ const PaymentModal = ({ isOpen, onClose, plan: selectedPlan }: PaymentModalProps
     });
 
     // Le reste de la fonction reste identique car il est déjà bien structuré.
-    let currentY = (doc as any).lastAutoTable.finalY + 15;
+    let currentY =
+      (
+        doc as unknown as {
+          lastAutoTable: {
+            finalY: number;
+          };
+        }
+      ).lastAutoTable.finalY + 15;
 
     // --- PROCHAINES ÉTAPES ---
     doc.setFont("helvetica", "bold");
@@ -357,7 +411,14 @@ const PaymentModal = ({ isOpen, onClose, plan: selectedPlan }: PaymentModalProps
       columnStyles: { 0: { fontStyle: "bold" } },
     });
 
-    currentY = (doc as any).lastAutoTable.finalY + 6;
+    currentY =
+      (
+        doc as unknown as {
+          lastAutoTable: {
+            finalY: number;
+          };
+        }
+      ).lastAutoTable.finalY + 6;
 
     doc.text(
       "Pour plus de facilité, vous pouvez nous contacter directement via ce lien :",
@@ -423,7 +484,8 @@ const PaymentModal = ({ isOpen, onClose, plan: selectedPlan }: PaymentModalProps
               >
                 <h2 className="text-2xl font-bold text-white mb-2">Vos informations</h2>
                 <p>
-                  Plan sélectionné : <strong>{selectedPlan.name}</strong> - {selectedPlan.price} DA
+                  Plan sélectionné : <strong>{selectedPlan.name}</strong> - {selectedPlan.price}{" "}
+                  {selectedPlan.currency}
                 </p>
                 <p className="text-sm text-white/50 mt-1">
                   Référence: <span className="font-mono font-semibold">{orderReference}</span>
@@ -452,8 +514,9 @@ const PaymentModal = ({ isOpen, onClose, plan: selectedPlan }: PaymentModalProps
                             setErrorMessage(isValid ? "" : "Numéro de téléphone invalide");
                           }
                         }}
-                        className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-gray-400/50 text-white ${!phoneValid && field === "phone" ? "border-red-500" : "border-gray-300/60"
-                          }`}
+                        className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-gray-400/50 text-white ${
+                          !phoneValid && field === "phone" ? "border-red-500" : "border-gray-300/60"
+                        }`}
                         placeholder={
                           field === "name"
                             ? "Ex: Ahmed Benali"
@@ -483,11 +546,16 @@ const PaymentModal = ({ isOpen, onClose, plan: selectedPlan }: PaymentModalProps
                         !phoneValid ||
                         !customerInfo.name ||
                         !customerInfo.email ||
-                        !customerInfo.phone
+                        !customerInfo.phone ||
+                        isUserCheckingLoading
                       }
-                      className={`flex-1 py-3 rounded-lg font-semibold transition ${!phoneValid || !customerInfo.name || !customerInfo.email || !customerInfo.phone ? "bg-custom-teal/20 text-white/40 cursor-not-allowed" : "bg-custom-teal text-white hover:bg-custom-teal/80"}`}
+                      className={`flex flex-1 py-3 rounded-lg items-center justify-center font-semibold transition ${!phoneValid || !customerInfo.name || !customerInfo.email || !customerInfo.phone || isUserCheckingLoading ? "bg-custom-teal/20 text-white/40 cursor-not-allowed " : "bg-custom-teal text-white hover:bg-custom-teal/80"}`}
                     >
-                      Continuer
+                      {isUserCheckingLoading ? (
+                        <Loader2Icon className="animate-spin self-center" />
+                      ) : (
+                        "Continuer"
+                      )}
                     </button>
                   </div>
                 </form>
@@ -570,7 +638,7 @@ const PaymentModal = ({ isOpen, onClose, plan: selectedPlan }: PaymentModalProps
                 <h2 className="text-2xl font-bold text-white/90 mb-4">
                   Instructions de paiement - {paymentMethod.name}
                 </h2>
-                {paymentMethod.id !== "cash" && (
+                {paymentMethod.id !== "cash" && paymentMethod.id !== "stripe" && (
                   <div className="bg-blue-900/40 border border-blue-700 rounded-lg p-4 mb-6">
                     <div className="flex items-center gap-2 text-blue-300 font-semibold mb-1">
                       <AlertCircle className="w-5 h-5" />
@@ -683,9 +751,9 @@ const PaymentModal = ({ isOpen, onClose, plan: selectedPlan }: PaymentModalProps
                             Action requise après le téléchargement
                           </h3>
                           <p className="text-sm text-yellow-300 mt-1">
-                            Après avoir téléchargé et suivi les instructions, cliquez sur "Valider
-                            ma commande" pour que nous puissions l'enregistrer. Elle sera activée
-                            dès réception de votre paiement.
+                            Après avoir téléchargé et suivi les instructions, cliquez sur
+                            &quot;Valider ma commande&quot; pour que nous puissions
+                            l&apos;enregistrer. Elle sera activée dès réception de votre paiement.
                           </p>
                         </div>
                       </div>
@@ -703,7 +771,7 @@ const PaymentModal = ({ isOpen, onClose, plan: selectedPlan }: PaymentModalProps
                         onClick={handleSubmitProof}
                         className="flex-1 py-3 rounded-lg font-semibold transition bg-custom-teal text-white hover:bg-custom-teal/80"
                       >
-                        J'ai téléchargé, valider ma commande
+                        J&apos;ai téléchargé, valider ma commande
                       </button>
                     </div>
                   </>
@@ -771,6 +839,30 @@ const PaymentModal = ({ isOpen, onClose, plan: selectedPlan }: PaymentModalProps
                     >
                       Confirmer la commande
                     </button>
+                  </div>
+                )}
+
+                {paymentMethod.id === "stripe" && (
+                  <div className="flex flex-col items-center">
+                    <p className="text-center my-4">
+                      {"Vous allez étre redigé vers un lien securisé pour terminer la transaction."}
+                    </p>
+
+                    <div className="flex flex-row gap-x-4">
+                      <button
+                        onClick={() => onClose()}
+                        className="bg-transparent border border-blue-500 px-4 py-2 rounded-lg"
+                      >
+                        {"Annuler"}
+                      </button>
+
+                      <button
+                        onClick={() => handleSubmitProof()}
+                        className="bg-blue-500 px-4 py-2 rounded-lg"
+                      >
+                        {"Continuer"}
+                      </button>
+                    </div>
                   </div>
                 )}
               </motion.div>

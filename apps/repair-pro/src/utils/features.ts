@@ -31,6 +31,7 @@ export interface Plan {
   name: string;
   price: string;
   period: string; // e.g. "An"
+  currency: string;
   description: string;
   pcsQty?: number | string;
   featureValues?: { [featureKey: string]: number | string };

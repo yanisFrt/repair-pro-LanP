@@ -1,9 +1,9 @@
 // next.config.js
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export', // ✅ remplace "next export"
+  output: "export",
   images: {
-    unoptimized: true, // obligatoire pour export statique si tu utilises <Image>
+    unoptimized: true,
   },
 };
 
