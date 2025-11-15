@@ -8,15 +8,15 @@ import { BsAndroid, BsApple } from "react-icons/bs";
 
 // SEO Metadata
 export const metadata: Metadata = {
-  title: "Repair PRO - Télécharger l'Application de Gestion d'Atelier",
+  title: "Repair PRO - Télécharger l&apos;Application de Gestion d&apos;Atelier",
   description:
-    "Téléchargez notre application Repair PRO pour gérer efficacement votre atelier de réparation de téléphones. Solutions innovantes pour la maintenance et l'économie circulaire.",
+    "Téléchargez notre application Repair PRO pour gérer efficacement votre atelier de réparation de téléphones. Solutions innovantes pour la maintenance et l&apos;économie circulaire.",
   keywords:
     "Repair PRO, application réparation, gestion atelier, réparation smartphone, économie circulaire",
   openGraph: {
-    title: "Repair PRO - Télécharger l'Application",
+    title: "Repair PRO - Télécharger l&apos;Application",
     description:
-      "Téléchargez l'application Repair PRO pour optimiser la gestion de votre atelier de réparation.",
+      "Téléchargez l&apos;application Repair PRO pour optimiser la gestion de votre atelier de réparation.",
     type: "website",
     locale: "fr_FR",
   },
@@ -62,7 +62,8 @@ const platforms = [
     platform: "ios",
     icon: <BsApple className="w-8 h-8" />,
     title: "iOS (Non disponible)",
-    description: "La version iOS n'est pas encore disponible. Nous travaillons à sa mise en place.",
+    description:
+      "La version iOS n&apos;est pas encore disponible. Nous travaillons à sa mise en place.",
     link: "#",
     size: "0 mb",
   },
@@ -78,7 +79,7 @@ export default function BlogPage() {
             <h1 className="text-2xl md:text-6xl font-bold mb-6">Téléchargements Logiciel</h1>
             <p className="md:text-xl text-slate-300 max-w-2xl mx-auto">
               Vous pouvez télécharger la dernière version de Repair PRO pour votre système
-              d'exploitation.
+              d&apos;exploitation.
             </p>
           </div>
 
@@ -142,7 +143,7 @@ export default function BlogPage() {
                 <ul className="space-y-1 text-sm">
                   <li>• Windows 10/11 (64-bit)</li>
                   <li>• 4 Go de RAM minimum</li>
-                  <li>• 100 Mo d'espace disque disponible</li>
+                  <li>• 100 Mo d&apos;espace disque disponible</li>
                   <li>• .NET Framework 4.8 ou version ultérieure</li>
                 </ul>
               </div>
@@ -151,7 +152,7 @@ export default function BlogPage() {
                 <ul className="space-y-1 text-sm">
                   <li>• Ubuntu 18.04+, Fedora 35+, Debian 11+</li>
                   <li>• 4 Go de RAM minimum</li>
-                  <li>• 100 Mo d'espace disque disponible</li>
+                  <li>• 100 Mo d&apos;espace disque disponible</li>
                   <li>• GLIBC 2.27 ou version ultérieure</li>
                 </ul>
               </div>

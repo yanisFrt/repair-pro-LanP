@@ -10,6 +10,8 @@ type ResponseAPI = {
   message: string;
   reference: string;
   success: boolean;
+  url?: string;
+  sessionId?: string;
 };
 
 export const useSubmitPayment = () => {
@@ -71,6 +73,9 @@ export const useSubmitPayment = () => {
 
       const data = await res.json();
       setResponse(data);
+
+      setLoading(false);
+      return data;
     } catch (e) {
       if (e instanceof Error) {
         setError(e.message);

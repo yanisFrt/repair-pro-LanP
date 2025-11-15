@@ -11,8 +11,6 @@ export const ConfirmationModalPopup = () => {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  if (!searchParams) return null;
-
   useEffect(() => {
     if (reference && reference.length > 5) {
       setIsModalOpen(true);
@@ -70,6 +68,8 @@ export const ConfirmationModalPopup = () => {
       document.body.style.overflow = "auto";
     };
   }, [isModalOpen]);
+
+  if (!searchParams) return null;
 
   return (
     <AnimatePresence>

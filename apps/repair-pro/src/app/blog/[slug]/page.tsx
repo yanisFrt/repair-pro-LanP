@@ -263,13 +263,13 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-4">Prêt à transformer votre atelier ?</h2>
           <p className="text-xl text-blue-100 mb-8">
-            Rejoignez des centaines d'ateliers qui utilisent déjà Repair PRO
+            Rejoignez des centaines d&apos;ateliers qui utilisent déjà Repair PRO
           </p>
           <Link
             href="/repair-pro#pricing"
             className="inline-block bg-white text-black px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
           >
-            Démarrer l'essai gratuit
+            Démarrer l&apos;essai gratuit
           </Link>
         </div>
       </section>

@@ -36,8 +36,8 @@ export default function BlogPage() {
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-2xl md:text-6xl font-bold mb-6">Blog Repair PRO</h1>
             <p className="md:text-xl text-slate-300 max-w-2xl mx-auto">
-              Conseils d'experts, actualités du secteur et guides pratiques pour optimiser votre
-              atelier de réparation
+              Conseils d&apos;experts, actualités du secteur et guides pratiques pour optimiser
+              votre atelier de réparation
             </p>
           </div>
         </section>
@@ -113,7 +113,7 @@ export default function BlogPage() {
                         href={`/blog/${article.slug}`}
                         className="inline-flex items-center gap-2 text-custom-teal font-semibold hover:custom-teal/40 transition-colors group"
                       >
-                        Lire l'article complet
+                        Lire l&apos;article complet
                         <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                       </Link>
                     </div>
@@ -128,13 +128,13 @@ export default function BlogPage() {
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl font-bold mb-4">Prêt à transformer votre atelier ?</h2>
             <p className="text-xl text-blue-100 mb-8">
-              Rejoignez des centaines d'ateliers qui utilisent déjà Repair PRO
+              Rejoignez des centaines d&apos;ateliers qui utilisent déjà Repair PRO
             </p>
             <Link
               href="/#pricing"
               className="inline-block bg-white text-black px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
             >
-              Démarrer l'essai gratuit
+              Démarrer l&apos;essai gratuit
             </Link>
           </div>
         </section>
@@ -148,7 +148,7 @@ export default function BlogPage() {
               "@type": "Blog",
               name: "Blog Repair PRO",
               description:
-                "Conseils et actualités sur la réparation de téléphones et la gestion d'ateliers",
+                "Conseils et actualités sur la réparation de téléphones et la gestion d&apos;ateliers",
               url: "https://repair-pro.tech/blog",
               inLanguage: "fr-FR",
               blogPost: articles.map((article) => ({

@@ -21,7 +21,9 @@ export default function DynamicFooter() {
               <span className="text-white font-semibold text-lg">Repair PRO</span>
             </div>
             <p className="text-sm text-slate-400 mb-6 leading-relaxed">
-              La plateforme moderne de gestion d'atelier de réparation conçue pour l'efficacité.
+              {
+                "La plateforme moderne de gestion d`&apos;atelier de réparation conçue pour l`&apos;efficacité."
+              }
             </p>
             <div className="flex gap-3">
               <a
@@ -105,7 +107,7 @@ export default function DynamicFooter() {
               </li>
               <li>
                 <a href="/status" className="text-sm hover:text-white transition-colors">
-                  Status
+                  {"Status"}
                 </a>
               </li>
             </ul>
@@ -117,22 +119,22 @@ export default function DynamicFooter() {
             <ul className="space-y-3">
               <li>
                 <a href="#" className="text-sm hover:text-white transition-colors">
-                  Politique de confidentialité
+                  {"Politique de confidentialité"}
                 </a>
               </li>
               <li>
                 <a href="#" className="text-sm hover:text-white transition-colors">
-                  Conditions d'utilisation
+                  {"Conditions d`&apos;utilisation"}
                 </a>
               </li>
               <li>
                 <a href="#" className="text-sm hover:text-white transition-colors">
-                  Politique des cookies
+                  {"Politique des cookies"}
                 </a>
               </li>
               <li>
                 <a href="#" className="text-sm hover:text-white transition-colors">
-                  RGPD
+                  {"RGPD"}
                 </a>
               </li>
             </ul>

@@ -26,7 +26,6 @@ import autoTable from "jspdf-autotable";
 import { GenerateReadableRef } from "@/utils/hash";
 import { checkUserExists } from "@/utils/api";
 
-
 const PAYMENT_CONFIG = {
   baridiMob: {
     qrCodeUrl: "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=Example",
@@ -177,7 +176,7 @@ const PaymentModal = ({
   const [copied, setCopied] = useState<string | null>(null);
   const [phoneValid, setPhoneValid] = useState(true);
   const [isUserCheckingLoading, setUserCheckingLoading] = useState(false);
-  const [isStripeLoading, setLoading] = useState(false);
+  // const [isStripeLoading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const fileInputRef = useRef<HTMLInputElement>(null);
   const { submitPayment, loading: isLoading, response } = useSubmitPayment();
@@ -214,17 +213,15 @@ const PaymentModal = ({
       const isUserExist = await checkUserExists(customerInfo.email);
 
       if (isUserExist) {
-        toast.error(`L'utilisateur ${customerInfo.email} existe déja !`)
+        toast.error(`L'utilisateur ${customerInfo.email} existe déja !`);
         return;
       }
     } catch (error) {
-      toast.error(`Une erreur est survenur lors de l'opération.`)
+      toast.error(`Une erreur est survenur lors de l'opération.`);
       return;
     } finally {
-
-      setUserCheckingLoading(false)
+      setUserCheckingLoading(false);
     }
-
 
     if (!phoneValid || !customerInfo.name || !customerInfo.email || !customerInfo.phone) return;
     if (currentCountry.toLowerCase() === "fr") {
@@ -275,7 +272,9 @@ const PaymentModal = ({
 
     setStep("confirmation");
     try {
-      const result = await submitPayment(
+      const result: {
+        url: string;
+      } = await submitPayment(
         customerInfo,
         orderReference,
         selectedPlan.name,
@@ -285,7 +284,7 @@ const PaymentModal = ({
       );
 
       if (paymentMethod.id === "stripe") {
-        window.open((result as any)?.url, "_blank");
+        window.open(result?.url, "_blank");
       }
     } catch (error) {
       toast.error("Une erreur est survenue lors de l'opération.");
@@ -362,7 +361,14 @@ const PaymentModal = ({
     });
 
     // Le reste de la fonction reste identique car il est déjà bien structuré.
-    let currentY = (doc as any).lastAutoTable.finalY + 15;
+    let currentY =
+      (
+        doc as unknown as {
+          lastAutoTable: {
+            finalY: number;
+          };
+        }
+      ).lastAutoTable.finalY + 15;
 
     // --- PROCHAINES ÉTAPES ---
     doc.setFont("helvetica", "bold");
@@ -405,7 +411,14 @@ const PaymentModal = ({
       columnStyles: { 0: { fontStyle: "bold" } },
     });
 
-    currentY = (doc as any).lastAutoTable.finalY + 6;
+    currentY =
+      (
+        doc as unknown as {
+          lastAutoTable: {
+            finalY: number;
+          };
+        }
+      ).lastAutoTable.finalY + 6;
 
     doc.text(
       "Pour plus de facilité, vous pouvez nous contacter directement via ce lien :",
@@ -471,7 +484,8 @@ const PaymentModal = ({
               >
                 <h2 className="text-2xl font-bold text-white mb-2">Vos informations</h2>
                 <p>
-                  Plan sélectionné : <strong>{selectedPlan.name}</strong> - {selectedPlan.price} {selectedPlan.currency}
+                  Plan sélectionné : <strong>{selectedPlan.name}</strong> - {selectedPlan.price}{" "}
+                  {selectedPlan.currency}
                 </p>
                 <p className="text-sm text-white/50 mt-1">
                   Référence: <span className="font-mono font-semibold">{orderReference}</span>
@@ -500,8 +514,9 @@ const PaymentModal = ({
                             setErrorMessage(isValid ? "" : "Numéro de téléphone invalide");
                           }
                         }}
-                        className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-gray-400/50 text-white ${!phoneValid && field === "phone" ? "border-red-500" : "border-gray-300/60"
-                          }`}
+                        className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-gray-400/50 text-white ${
+                          !phoneValid && field === "phone" ? "border-red-500" : "border-gray-300/60"
+                        }`}
                         placeholder={
                           field === "name"
                             ? "Ex: Ahmed Benali"
@@ -536,8 +551,11 @@ const PaymentModal = ({
                       }
                       className={`flex flex-1 py-3 rounded-lg items-center justify-center font-semibold transition ${!phoneValid || !customerInfo.name || !customerInfo.email || !customerInfo.phone || isUserCheckingLoading ? "bg-custom-teal/20 text-white/40 cursor-not-allowed " : "bg-custom-teal text-white hover:bg-custom-teal/80"}`}
                     >
-                      {isUserCheckingLoading ? <Loader2Icon className="animate-spin self-center" /> : "Continuer"}
-
+                      {isUserCheckingLoading ? (
+                        <Loader2Icon className="animate-spin self-center" />
+                      ) : (
+                        "Continuer"
+                      )}
                     </button>
                   </div>
                 </form>
@@ -733,9 +751,9 @@ const PaymentModal = ({
                             Action requise après le téléchargement
                           </h3>
                           <p className="text-sm text-yellow-300 mt-1">
-                            Après avoir téléchargé et suivi les instructions, cliquez sur "Valider
-                            ma commande" pour que nous puissions l'enregistrer. Elle sera activée
-                            dès réception de votre paiement.
+                            Après avoir téléchargé et suivi les instructions, cliquez sur
+                            &quot;Valider ma commande&quot; pour que nous puissions
+                            l&apos;enregistrer. Elle sera activée dès réception de votre paiement.
                           </p>
                         </div>
                       </div>
@@ -753,7 +771,7 @@ const PaymentModal = ({
                         onClick={handleSubmitProof}
                         className="flex-1 py-3 rounded-lg font-semibold transition bg-custom-teal text-white hover:bg-custom-teal/80"
                       >
-                        J'ai téléchargé, valider ma commande
+                        J&apos;ai téléchargé, valider ma commande
                       </button>
                     </div>
                   </>

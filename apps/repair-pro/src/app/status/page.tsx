@@ -11,7 +11,7 @@ const services = [
     url: "https://cdn.repair-pro.cloud-db.pro/health",
   },
   {
-    name: "Services de fonctionnement de l'application",
+    name: "Services de fonctionnement de l`&apos;application",
     url: "https://license.cloud-db.pro/healthz",
   },
 ];
@@ -46,8 +46,9 @@ const StatusPage = () => {
               État de la plateforme et disponibilité
             </h1>
             <p className="md:text-xl text-slate-300 max-w-2xl mx-auto">
-              Informations en temps réel sur l'état du système et la disponibilité. Nous nous
-              engageons à maintenir RepairFlow en parfait fonctionnement.
+              {
+                "Informations en temps réel sur l`&apos;état du système et la disponibilité. Nous nous engageons à maintenir RepairFlow en parfait fonctionnement."
+              }
             </p>
           </div>
         </section>

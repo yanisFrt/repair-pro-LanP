@@ -112,14 +112,16 @@ export default function RPLanding() {
   );
 }
 
+type Countries = "dz" | "fr";
+
 export function RepairProLanding() {
   const [isContactUsOpen, setContactUsOpen] = useState(false);
-  const [selectedCountry, setSelectedCountry] = useState<"dz" | "fr">("dz");
+  const [selectedCountry, setSelectedCountry] = useState<Countries>("dz");
   const { country, loading, error: countryError } = useCountryDetection();
 
   useEffect(() => {
     if (country) {
-      setSelectedCountry(country.toLowerCase() as any);
+      setSelectedCountry(country.toLowerCase() as Countries);
     }
   }, [country]);
 
@@ -376,7 +378,7 @@ export function RepairProLanding() {
               </>
             ) : (
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 w-full">
-                {getPlans((selectedCountry as any) || "dz").map((plan) => (
+                {getPlans((selectedCountry as Countries) || "dz").map((plan) => (
                   <div
                     key={plan.id}
                     className={`relative flex flex-col justify-between rounded-2xl border border-gray-600 bg-gray-900/40 p-8 backdrop-blur-sm transition-transform hover:-translate-y-1 hover:border-gray-700 ${plan.popular ? "ring-2 ring-custom-teal scale-105" : ""}`}
@@ -524,7 +526,7 @@ export function RepairProLanding() {
         isOpen={isPaymentModalOpen}
         onClose={() => setPaymentModalOpen(false)}
         plan={selectedPlan}
-        currentCountry={(selectedCountry as any) || "dz"}
+        currentCountry={(selectedCountry as Countries) || "dz"}
       />
     </div>
   );
