@@ -21,9 +21,7 @@ export default function DynamicFooter() {
               <span className="text-white font-semibold text-lg">Repair PRO</span>
             </div>
             <p className="text-sm text-slate-400 mb-6 leading-relaxed">
-              {
-                "La plateforme moderne de gestion d`&apos;atelier de réparation conçue pour l`&apos;efficacité."
-              }
+              {"La plateforme moderne de gestion d'atelier de réparation conçue pour l'efficacité."}
             </p>
             <div className="flex gap-3">
               <a
@@ -124,7 +122,7 @@ export default function DynamicFooter() {
               </li>
               <li>
                 <a href="#" className="text-sm hover:text-white transition-colors">
-                  {"Conditions d`&apos;utilisation"}
+                  {"Conditions d'utilisation"}
                 </a>
               </li>
               <li>
