@@ -1,9 +1,9 @@
 module.exports = {
   apps: [
     {
-      name: "codes-nova",
+      name: "repair-pro",
       script: "node",
-      args: "node_modules/next/dist/bin/next start", // Chemin explicite sous Windows
+      args: "node_modules/next/dist/bin/next start -p 3001",
       cwd: "./",
       exec_mode: "fork",
       instances: 1,
@@ -16,7 +16,7 @@ module.exports = {
       // out_file: "./logs/output.log",
       env: {
         NODE_ENV: "production",
-        PORT: 3027,
+        PORT: 3001,
       },
     },
   ],
