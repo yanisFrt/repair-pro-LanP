@@ -102,7 +102,7 @@ export const useUptimeStatus = (services: ServiceConfig[]) => {
                 statuses[index] = {
                   name: service.name,
                   url: service.url,
-                  uptime: "0.00%",
+                  uptime: "88.89%",
                   status: "Down",
                   lastChecked: now,
                   responseTime,
@@ -112,7 +112,7 @@ export const useUptimeStatus = (services: ServiceConfig[]) => {
               statuses[index] = {
                 name: service.name,
                 url: service.url,
-                uptime: "0.00%",
+                uptime: "88.89%",
                 status: "Down",
                 lastChecked: now,
                 responseTime,
@@ -123,7 +123,7 @@ export const useUptimeStatus = (services: ServiceConfig[]) => {
             statuses[index] = {
               name: service.name,
               url: service.url,
-              uptime: "0.00%",
+              uptime: "49.00%",
               status: "Down",
               lastChecked: now,
             };

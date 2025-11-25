@@ -11,7 +11,7 @@ const services = [
     url: "https://cdn.repair-pro.cloud-db.pro/health",
   },
   {
-    name: "Services de fonctionnement de l`&apos;application",
+    name: "Services de fonctionnement de l'application",
     url: "https://license.cloud-db.pro/healthz",
   },
 ];
@@ -34,6 +34,11 @@ const StatusPage = () => {
     }
   };
 
+  const STATUS = {
+    down: "En panne",
+    operational: "Opérationnel",
+  };
+
   const allOperational = serviceStatuses.every((service) => service.status === "Operational");
 
   return (
@@ -47,7 +52,7 @@ const StatusPage = () => {
             </h1>
             <p className="md:text-xl text-slate-300 max-w-2xl mx-auto">
               {
-                "Informations en temps réel sur l`&apos;état du système et la disponibilité. Nous nous engageons à maintenir RepairFlow en parfait fonctionnement."
+                "Informations en temps réel sur l'état du système et la disponibilité. Nous nous engageons à maintenir RepairFlow en parfait fonctionnement."
               }
             </p>
           </div>
@@ -88,7 +93,7 @@ const StatusPage = () => {
                               : "bg-red-900 text-red-300"
                           }`}
                         >
-                          {service.status}
+                          {STATUS[service?.status?.toLowerCase()]}
                         </span>
                       </div>
 
@@ -112,6 +117,8 @@ const StatusPage = () => {
 
               {loading && <ShimmerGrid />}
             </div>
+
+            <p className="text-white/60">{"L'état du service s'actualise toutes les heures."}</p>
           </div>
         </div>
       </main>
