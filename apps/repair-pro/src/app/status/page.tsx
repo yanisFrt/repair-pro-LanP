@@ -4,6 +4,7 @@
 import { Bell, DatabaseIcon, Globe, ServerIcon } from "lucide-react";
 import ShimmerGrid from "@/components/ShimmerGrid";
 import { useUptimeStatus } from "@/hooks/useUptimeStatus";
+import { MonitorThisPage } from "@/components/registerThisPageAnalytics";
 
 const services = [
   {
@@ -44,6 +45,7 @@ const StatusPage = () => {
   return (
     <div>
       <main className="min-h-screen bg-slate-900">
+        <MonitorThisPage name={`status_page`} />
         {/* Hero Section */}
         <section className="flex flex-col bg-gradient-to-br  from-slate-900 via-slate-800 to-slate-900 text-white pt-20 pb-10 px-6">
           <div className="flex flex-col max-w-4xl mx-auto text-center">
