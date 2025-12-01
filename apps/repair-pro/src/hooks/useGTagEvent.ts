@@ -4,22 +4,29 @@ import { useEffect } from "react";
 
 declare global {
   interface Window {
-    gtag?: (command: string, eventName: string, eventParams?: Record<string, any>) => void;
+    gtag?: (
+      command: string,
+      eventName: string,
+      eventParams?: Record<string, string | number | object>
+    ) => void;
   }
 }
 
 export const useGtagEvent = () => {
   useEffect(() => {
     if (typeof window !== "undefined" && !window.gtag) {
-      window.gtag = function () {
+      window.gtag = function (...args) {
         window.dataLayer = window?.dataLayer || [];
 
-        window.dataLayer.push(arguments);
+        window.dataLayer.push(args);
       };
     }
   }, []);
 
-  const trackEvent = (eventName: string, eventParams?: Record<string, any>) => {
+  const trackEvent = (
+    eventName: string,
+    eventParams?: Record<string, string | number | object>
+  ) => {
     if (typeof window !== "undefined" && window.gtag) {
       window.gtag("event", eventName, eventParams);
     }
