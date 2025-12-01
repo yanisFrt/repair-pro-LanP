@@ -19,7 +19,7 @@ export const FAQSection = ({
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-            Vous Hésitez Encore ?
+            Vous Hésitez ?
             <span className="block text-custom-teal mt-2">Vos Questions, Nos Réponses</span>
           </h2>
           <p className="md:text-xl text-white/70 max-w-3xl mx-auto">
