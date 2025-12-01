@@ -25,6 +25,8 @@ import jsPDF from "jspdf";
 import autoTable from "jspdf-autotable";
 import { GenerateReadableRef } from "@/utils/hash";
 import { checkUserExists } from "@/utils/api";
+import { useGtagEvent } from "@/hooks/useGTagEvent";
+import { CLICK_LOCATIONS } from "@/utils/analytics";
 
 const PAYMENT_CONFIG = {
   baridiMob: {
@@ -181,8 +183,13 @@ const PaymentModal = ({
   const fileInputRef = useRef<HTMLInputElement>(null);
   const { submitPayment, loading: isLoading, response } = useSubmitPayment();
 
+  const trackEvent = useGtagEvent();
+
   useEffect(() => {
     if (isOpen) {
+      trackEvent(CLICK_LOCATIONS.paymentModal, {
+        page_title: `Payment Modal ${selectedPlan}`,
+      });
       setRefOrder(`RP-${GenerateReadableRef(8)}`);
       setStep("customer");
       setPaymentMethod(null);
