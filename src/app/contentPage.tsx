@@ -183,11 +183,11 @@ export function RepairProLanding() {
       {/* FAQ Section */}
       <FAQSection decodeHtml={decodeHtml} faqs={faqs} openFaq={openFaq} toggleFaq={toggleFaq} />
 
-      {/* Free Version Section */}
-      <FreeVersionSection setContactUsOpen={setContactUsOpen} />
-
       {/* CTA Section */}
       <CTASection scrollTo={scrollTo} />
+
+      {/* Free Version Section */}
+      <FreeVersionSection setContactUsOpen={setContactUsOpen} />
 
       {/* Contact Modal */}
       <ContactModal isOpen={isContactUsOpen} onClose={() => setContactUsOpen(false)} />
