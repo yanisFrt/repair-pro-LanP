@@ -25,6 +25,8 @@ import jsPDF from "jspdf";
 import autoTable from "jspdf-autotable";
 import { GenerateReadableRef } from "@/utils/hash";
 import { checkUserExists } from "@/utils/api";
+import { useGtagEvent } from "@/hooks/useGTagEvent";
+import { CLICK_LOCATIONS } from "@/utils/analytics";
 
 const PAYMENT_CONFIG = {
   baridiMob: {
@@ -181,8 +183,13 @@ const PaymentModal = ({
   const fileInputRef = useRef<HTMLInputElement>(null);
   const { submitPayment, loading: isLoading, response } = useSubmitPayment();
 
+  const trackEvent = useGtagEvent();
+
   useEffect(() => {
     if (isOpen) {
+      trackEvent(CLICK_LOCATIONS.paymentModal, {
+        page_title: `Payment Modal ${selectedPlan}`,
+      });
       setRefOrder(`RP-${GenerateReadableRef(8)}`);
       setStep("customer");
       setPaymentMethod(null);
@@ -200,6 +207,9 @@ const PaymentModal = ({
   }, [isOpen]);
 
   const copyToClipboard = (text: string, id: string) => {
+    trackEvent(CLICK_LOCATIONS.paymentModal, {
+      copy_to_clipboard: `Function Call`,
+    });
     navigator.clipboard.writeText(text);
     setCopied(id);
     setTimeout(() => setCopied(null), 2000);
@@ -213,10 +223,16 @@ const PaymentModal = ({
       const isUserExist = await checkUserExists(customerInfo.email);
 
       if (isUserExist) {
+        trackEvent(CLICK_LOCATIONS.paymentModal, {
+          user_exist_error: `User ${customerInfo.name}`,
+        });
         toast.error(`L'utilisateur ${customerInfo.email} existe déja !`);
         return;
       }
     } catch (error) {
+      trackEvent(CLICK_LOCATIONS.paymentModal, {
+        thrown_error: `Error ${error}`,
+      });
       toast.error(`Une erreur est survenur lors de l'opération.`);
       return;
     } finally {
@@ -234,6 +250,10 @@ const PaymentModal = ({
 
   const handlePaymentMethodSelect = (method: PaymentMethod) => {
     if (method.isDisabled) return;
+
+    trackEvent(CLICK_LOCATIONS.paymentModal, {
+      method_selected: `Method ${method}`,
+    });
 
     setPaymentMethod(method);
 
@@ -283,10 +303,17 @@ const PaymentModal = ({
         proofFile ?? undefined
       );
 
+      trackEvent(CLICK_LOCATIONS.paymentModal, {
+        submit_payment: `Payment Success`,
+      });
+
       if (paymentMethod.id === "stripe") {
         window.open(result?.url, "_blank");
       }
     } catch (error) {
+      trackEvent(CLICK_LOCATIONS.paymentModal, {
+        submit_payment: `Payment Error`,
+      });
       toast.error("Une erreur est survenue lors de l'opération.");
       setStep("upload");
     }

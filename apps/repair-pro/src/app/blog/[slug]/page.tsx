@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { notFound } from "next/navigation";
 import { Article, articles } from "./articles";
+import { MonitorThisPage } from "@/components/registerThisPageAnalytics";
 
 // Get article by slug
 function getArticleBySlug(slug: string): Article | undefined {
@@ -76,6 +77,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
 
   return (
     <main className="min-h-screen bg-slate-800">
+      <MonitorThisPage name={`blog_${params.slug.toLowerCase()}`} />
       {/* Back Button */}
       <div className="bg-slate-900 border-b border-slate-600">
         <div className="max-w-4xl mx-auto px-6 py-4">
