@@ -15,9 +15,12 @@ export default function DynamicFooter() {
           {/* Brand Section */}
           <div className="md:col-span-1">
             <div className="flex items-center gap-2 mb-4">
-              <div className="bg-white text-slate-950 rounded-lg w-8 h-8 flex items-center justify-center font-bold text-sm">
-                RP
-              </div>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/LOGO-V2-nobg.png"
+                alt="Repair PRO Logo"
+                className="w-16 h-16 object-contain"
+              />
               <span className="text-white font-semibold text-lg">Repair PRO</span>
             </div>
             <p className="text-sm text-slate-400 mb-6 leading-relaxed">

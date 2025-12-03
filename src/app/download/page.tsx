@@ -1,11 +1,21 @@
 // app/blog/page.tsx
 import { Metadata } from "next";
-import { Monitor, Smartphone } from "lucide-react";
+import { Monitor, Smartphone, Apple } from "lucide-react";
 import React from "react";
-import { LiaLinux } from "react-icons/lia";
-import { FaWindows } from "react-icons/fa6";
-import { BsAndroid, BsApple } from "react-icons/bs";
 import { DownloadButton } from "@/components/DownloadButton";
+
+// Composants d'icônes pour les plateformes
+const WindowsIcon = ({ className }: { className?: string }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+    <path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801" />
+  </svg>
+);
+
+const LinuxIcon = ({ className }: { className?: string }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+    <path d="M20.581 19.049c-.55-.446-.336-1.431-.907-1.917.553-3.365-.997-6.331-2.845-8.232-1.551-1.595-1.051-3.147-1.051-4.49 0-2.146-.881-4.41-3.55-4.41-2.853 0-3.635 2.38-3.663 3.738-.068 3.262.659 4.11-1.25 6.484-2.246 2.793-2.577 5.579-2.07 7.057-.237.276-.557.582-1.155.835-1.652.72-.441 1.925-.898 2.78-.13.243-.192.497-.192.74 0 .75.596 1.399 1.679 1.302 1.461-.13 2.809.905 3.681.905.77 0 1.402-.438 1.696-1.041 1.377-.339 3.077-.296 4.453.059.247.691.917 1.141 1.662 1.141 1.631 0 1.945-1.849 3.816-2.475.674-.225 1.013-.879 1.013-1.488 0-.39-.139-.761-.419-.988zM11.434 2.714c.483 0 .875.438.875 1.071 0 .633-.392 1.071-.875 1.071-.483 0-.875-.438-.875-1.071 0-.633.392-1.071.875-1.071zm-2.264 1.071c0-.633.392-1.071.875-1.071.483 0 .875.438.875 1.071 0 .633-.392 1.071-.875 1.071-.483 0-.875-.438-.875-1.071zm8.022 12.331c-.069.008-.135.019-.202.031-2.045-.138-3.566-.495-5.107-.495-1.637 0-3.238.33-5.435.495a1.101 1.101 0 0 1-.203-.031c-.868-.11-1.354-.856-1.354-1.837 0-.817.395-1.707 1.094-2.426.7-.719 1.648-1.125 2.594-1.125 1.042 0 2.007.457 2.638 1.251.631-.794 1.596-1.251 2.638-1.251.946 0 1.894.406 2.594 1.125.699.719 1.094 1.609 1.094 2.426 0 .981-.486 1.727-1.354 1.837z" />
+  </svg>
+);
 
 // SEO Metadata
 export const metadata: Metadata = {
@@ -33,7 +43,7 @@ const platforms = [
   {
     enabled: true,
     platform: "windows",
-    icon: <FaWindows className="w-8 h-8" />,
+    icon: <WindowsIcon className="w-8 h-8" />,
     title: "Windows x64 Bit",
     description: "Télécharger la version x64 pour windows. Compatible avec windows 11.",
     link: "https://cdn.repair-pro.cloud-db.pro/download/latest/windows",
@@ -42,7 +52,7 @@ const platforms = [
   {
     enabled: true,
     platform: "linux",
-    icon: <LiaLinux className="w-8 h-8" />,
+    icon: <LinuxIcon className="w-8 h-8" />,
     title: "Linux",
     description:
       "Télécharger la version x64 pour Linux. Compatible avec les distributions récentes.",
@@ -52,7 +62,7 @@ const platforms = [
   {
     enabled: false,
     platform: "android",
-    icon: <BsAndroid className="w-8 h-8" />,
+    icon: <Smartphone className="w-8 h-8" />,
     title: "Android (Bientôt disponible)",
     description: "Télécharger la version Android. Compatible avec les appareils récents.",
     link: "#",
@@ -61,10 +71,9 @@ const platforms = [
   {
     enabled: false,
     platform: "ios",
-    icon: <BsApple className="w-8 h-8" />,
+    icon: <Apple className="w-8 h-8" />,
     title: "iOS (Non disponible)",
-    description:
-      "La version iOS n&apos;est pas encore disponible. Nous travaillons à sa mise en place.",
+    description: "La version iOS n'est pas encore disponible. Nous travaillons à sa mise en place.",
     link: "#",
     size: "0 mb",
   },

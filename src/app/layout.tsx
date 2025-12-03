@@ -6,11 +6,23 @@ import { NavBar } from "@/components/Navbar";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import Script from "next/script";
 
-const inter = Inter({ subsets: ["latin"] });
+// Optimisation de la police avec préchargement et display swap
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  preload: true,
+  variable: "--font-inter",
+  weight: ["400", "500", "600", "700"],
+});
 
 export const metadata: Metadata = {
   title: "Repair Pro - Solutions de Réparation Professionnelles",
   description: "Plateforme de gestion de réparations professionnelle",
+  icons: {
+    icon: "/LOGO-V2-nobg.png",
+    shortcut: "/LOGO-V2-nobg.png",
+    apple: "/LOGO-V2-nobg.png",
+  },
 };
 
 export default function RootLayout({
@@ -21,8 +33,14 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <head>
+        {/* Préchargement des ressources critiques */}
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://js.stripe.com" />
+        <link rel="dns-prefetch" href="https://js.stripe.com" />
+
         {/* Google Tag Manager  */}
-        <Script id="gtm">
+        <Script id="gtm" strategy="afterInteractive">
           {`
   (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],

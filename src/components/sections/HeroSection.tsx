@@ -3,9 +3,9 @@ import { TranslucentButton } from "../TranslucentButton";
 
 export const HeroSection = ({ scrollTo }: { scrollTo: (target: string) => void }) => {
   return (
-    <section className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <section className="relative py-10 px-4 sm:px-6 lg:px-8 overflow-hidden">
       <div className="absolute inset-0 bg-grid-white/10 [mask-image:linear-gradient(to_bottom,white_5%,transparent_90%)]"></div>
-      <div className="relative max-w-7xl mx-auto text-center pt-8">
+      <div className="relative max-w-7xl mx-auto text-center pt-0">
         <div className="mb-2">
           <span className="inline-block px-4 py-2 bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-500/30 rounded-full text-blue-300 text-sm font-medium mb-6">
             🚀 Le partenaire de croissance pour les réparateurs
