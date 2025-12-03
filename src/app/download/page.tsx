@@ -5,6 +5,7 @@ import React from "react";
 import { LiaLinux } from "react-icons/lia";
 import { FaWindows } from "react-icons/fa6";
 import { BsAndroid, BsApple } from "react-icons/bs";
+import { DownloadButton } from "@/components/DownloadButton";
 
 // SEO Metadata
 export const metadata: Metadata = {
@@ -115,12 +116,7 @@ export default function BlogPage() {
                 {feature.enabled ? (
                   <div className="mt-4 flex flex-row items-center">
                     <span className="text-gray-400 text-sm flex flex-1">{`Taille: ${feature.size}`}</span>
-                    <a
-                      href={feature.link}
-                      className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-custom-teal/70 hover:bg-custom-teal/60 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-custom-teal transition-colors"
-                    >
-                      Télécharger
-                    </a>
+                    <DownloadButton link={feature.link} name={feature.platform} />
                   </div>
                 ) : (
                   <div className="mt-6 flex flex-row items-center justify-center">
