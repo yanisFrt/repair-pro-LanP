@@ -45,9 +45,3 @@ next-env.d.ts
 
 # turbo
 .turbo
-
-# old structure (keeping for reference, can be deleted after migration)
-/src
-/pages
-/public
-package-lock.json

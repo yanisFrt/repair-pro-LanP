@@ -1,150 +1,100 @@
-# CNOVA Monorepo
+# Repair Pro Landing Page
 
-Monorepo Yarn v4 + Turbo pour les applications CNOVA.
+Landing page pour Repair Pro - Plateforme de gestion de réparations professionnelle.
 
 ## Structure du Projet
 
 ```
 .
-├── apps/
-│   ├── repair-pro/              # Application Repair Pro (déploiement: repair-pro.tech)
-│   └── codesnova-landing-page/  # Landing page CodesNova
-├── package.json                 # Configuration racine du monorepo
-├── turbo.json                   # Configuration Turbo
-└── .yarnrc.yml                  # Configuration Yarn v4
+├── src/                 # Code source de l'application
+├── public/              # Fichiers statiques
+├── package.json         # Configuration npm
+├── netlify.toml         # Configuration Netlify
+├── next.config.mjs      # Configuration Next.js
+├── tailwind.config.ts   # Configuration Tailwind CSS
+└── tsconfig.json        # Configuration TypeScript
 ```
 
-## Applications
+## Technologies Utilisées
 
-### 🔧 Repair Pro
-
-- **Description**: Plateforme de gestion de réparations professionnelle
-- **Port**: 3001
-- **Déploiement**: repair-pro.tech (via Ansible)
-- **Dossier**: `apps/repair-pro/`
-
-### 🚀 CodesNova Landing Page
-
-- **Description**: Page d'accueil de CodesNova
-- **Port**: 3000
-- **Dossier**: `apps/codesnova-landing-page/`
+- **Next.js 14**: Framework React pour le rendu côté serveur
+- **TypeScript**: Typage statique
+- **Tailwind CSS**: Framework CSS utility-first
+- **Framer Motion**: Animations
+- **React Icons & Lucide React**: Bibliothèques d'icônes
 
 ## Installation
 
 ```bash
-# Installer toutes les dépendances
-yarn install
-
-# Installer les dépendances pour une app spécifique
-yarn workspace repair-pro install
-yarn workspace codesnova-landing-page install
+# Installer les dépendances
+npm install
 ```
 
 ## Commandes de Développement
 
-### Commandes Globales
-
 ```bash
-# Lancer toutes les applications en mode dev
-yarn dev
+# Mode développement (port 3001)
+npm run dev
 
-# Build toutes les applications
-yarn build
+# Build de production
+npm run build
 
-# Lancer toutes les applications en production
-yarn start
+# Lancer en mode production
+npm start
 
-# Linter toutes les applications
-yarn lint
+# Linter le code
+npm run lint
 
-# Formatter tout le code
-yarn format
+# Formatter le code
+npm run format
 
-# Nettoyer tous les node_modules et builds
-yarn clean
+# Nettoyer node_modules et builds
+npm run clean
 ```
 
-### Commandes par Application
+## Déploiement sur Netlify
 
-#### Repair Pro
+### Configuration Automatique
+
+Le fichier `netlify.toml` est configuré pour déployer automatiquement l'application.
+
+### Étapes de Déploiement
+
+1. **Connecter le repository à Netlify**
+   - Se connecter sur [Netlify](https://netlify.com)
+   - Importer le repository Git
+
+2. **Configuration automatique**
+   - Netlify détectera automatiquement la configuration dans `netlify.toml`
+   - Build command: `npm run build`
+   - Publish directory: `.next`
+   - Node version: 20
+
+3. **Variables d'environnement**
+   - Configurer les variables dans le dashboard Netlify
+   - Voir `.env.example` pour la liste des variables
+
+### Build Manuel
 
 ```bash
-# Mode développement
-yarn repair-pro:dev
+# Build local
+npm run build
 
-# Build
-yarn repair-pro:build
-
-# Mode production
-yarn repair-pro:start
+# Tester le build
+npm start
 ```
-
-#### CodesNova Landing Page
-
-```bash
-# Mode développement
-yarn codesnova:dev
-
-# Build
-yarn codesnova:build
-
-# Mode production
-yarn codesnova:start
-```
-
-## Architecture du Monorepo
-
-### Principe: Isolation Complète
-
-Ce monorepo utilise une approche d'**isolation complète** entre les applications:
-
-- ✅ **Pas de code partagé** entre les applications
-- ✅ **Dépendances isolées** pour chaque application
-- ✅ **Déploiements indépendants** sur des plateformes différentes
-- ✅ **Pas de packages communs** (pas de `packages/shared`)
-
-### Pourquoi cette approche?
-
-1. **Déploiement simplifié**: Chaque application peut être déployée indépendamment sans risque de casser l'autre
-2. **Pas de couplage**: Modifications dans une app n'affectent pas l'autre
-3. **Flexibilité**: Facilité de migration ou extraction d'une application si nécessaire
-4. **Sécurité**: Évite les problèmes de copiage et de dépendances circulaires
-
-## Technologies Utilisées
-
-- **Yarn v4**: Gestionnaire de packages moderne avec workspaces
-- **Turbo**: Build system optimisé pour les monorepos
-- **Next.js 14**: Framework React pour les deux applications
-- **TypeScript**: Typage statique
-- **Tailwind CSS**: Framework CSS utility-first
-
-## Déploiement
-
-### Repair Pro (repair-pro.tech)
-
-1. L'application est déployée via **Ansible**
-2. Déploiement sur le domaine: **repair-pro.tech**
-3. Build de production: `yarn repair-pro:build`
-4. Voir `apps/repair-pro/README.md` pour plus de détails
-
-### CodesNova Landing Page
-
-1. Build de production: `yarn codesnova:build`
-2. Déploiement selon votre plateforme (Vercel, Netlify, etc.)
-3. Voir `apps/codesnova-landing-page/README.md` pour plus de détails
 
 ## Configuration
 
 ### Variables d'Environnement
 
-Chaque application a son propre fichier `.env`:
+L'application utilise son propre fichier `.env`:
 
 ```
-apps/repair-pro/.env              # Variables pour Repair Pro
-apps/codesnova-landing-page/.env  # Variables pour CodesNova
+.env              # Variables d'environnement
 ```
 
-Voir les fichiers `.env.example` dans chaque application pour les variables requises.
+Voir le fichier `.env.example` pour les variables requises.
 
 ## Dépannage
 
@@ -152,25 +102,27 @@ Voir les fichiers `.env.example` dans chaque application pour les variables requ
 
 ```bash
 # Nettoyer et réinstaller
-rm -rf node_modules apps/*/node_modules
-yarn install
+rm -rf node_modules package-lock.json
+npm install
 ```
 
-### Problèmes de cache Turbo
+### Problèmes de cache Next.js
 
 ```bash
-# Nettoyer le cache Turbo
-rm -rf .turbo
-yarn build
+# Nettoyer le cache
+rm -rf .next
+npm run build
 ```
 
 ### Problèmes de ports
 
-Si les ports sont déjà utilisés, modifiez-les dans les fichiers `package.json` des applications:
+Si le port 3001 est déjà utilisé, modifiez-le dans `package.json`:
 
-- Repair Pro: Port 3001
-- CodesNova: Port 3000
+```json
+"dev": "next dev -p 3001"  // Changer le port ici
+"start": "next start -p 3001"  // Changer le port ici aussi
+```
 
 ## License
 
-Propriétaire - CODES-NOVA © 2025
+Propriétaire - Repair Pro © 2025
