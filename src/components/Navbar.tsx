@@ -4,12 +4,16 @@ import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
+import { useGtagEvent } from "@/hooks/useGTagEvent";
+import { CLICK_LOCATIONS } from "@/utils/analytics";
 
 export const NavBar = () => {
   const pathname = usePathname();
   const isRoot = pathname === "/";
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const trackEvent = useGtagEvent();
 
   const navItems = [
     { name: "Acceuil", href: "/", target: "#" },
@@ -20,6 +24,9 @@ export const NavBar = () => {
   ];
 
   const scrollTo = (target: string) => {
+    trackEvent(CLICK_LOCATIONS.navbar, {
+      page_title: `NavBar ScrollTo Page ${target}`,
+    });
     const section = document.getElementById(target);
     section?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
