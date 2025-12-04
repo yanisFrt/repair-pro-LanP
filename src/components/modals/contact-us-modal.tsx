@@ -2,12 +2,11 @@
 
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, CheckCircle, Loader2Icon } from "lucide-react";
+import { X, CheckCircle, Loader2Icon, AlertTriangle } from "lucide-react";
 import type { CustomerError, CustomerInfo } from "@/app/PaymentModal";
 import { GenerateReadableRef } from "@/utils/hash";
 import { isEmailValid, isPhoneNumber } from "@/utils/utils";
 import { useSubmitPayment } from "@/hooks/usePayment";
-import { CiWarning } from "react-icons/ci";
 
 const ContactModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => {
 
@@ -295,7 +294,7 @@ const ContactModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
                 className="bg-gray-900 text-white rounded-2xl shadow-2xl max-w-md w-full mx-4 relative overflow-hidden"
               >
                 <div className="flex flex-col items-center justify-center text-center py-4 gap-y-4">
-                  <CiWarning className="text-red-500" size={50} />
+                  <AlertTriangle className="text-red-500 w-12 h-12" />
                   <p>{"Une erreur est survenue. Veuillez réessayez."}</p>
 
                   <motion.button

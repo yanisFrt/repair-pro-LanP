@@ -451,6 +451,7 @@ export default function AlgerianPaymentSystem() {
                       <div>
                         <p className="font-semibold mb-3">Option 1: Scanner le QR Code</p>
                         <div className="bg-white p-4 rounded-lg border-2 border-dashed border-gray-300 text-center">
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
                           <img
                             src={PAYMENT_CONFIG.baridiMob.qrCodeUrl}
                             alt="QR Code BaridiMob"
@@ -520,7 +521,7 @@ export default function AlgerianPaymentSystem() {
                     </div>
                     <div className="mt-4 p-3 bg-white rounded border border-yellow-300">
                       <p className="text-sm font-semibold text-yellow-800 mb-1">
-                        N&apos;oubliez pas la référence !
+                        N'oubliez pas la référence !
                       </p>
                       <p className="text-sm text-gray-700">
                         Dans le champ Libellé ou Motif, indiquez: <strong>{orderReference}</strong>

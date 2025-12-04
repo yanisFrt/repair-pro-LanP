@@ -158,6 +158,7 @@ export const useUptimeStatus = (services: ServiceConfig[]) => {
     if (isClient) {
       checkStatus();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isClient]);
 
   useEffect(() => {

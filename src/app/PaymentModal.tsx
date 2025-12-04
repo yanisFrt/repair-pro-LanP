@@ -7,10 +7,12 @@ import { isPhoneNumber } from "@/utils/utils";
 import { AnimatePresence, type Variants, motion } from "framer-motion";
 import {
   AlertCircle,
+  AlertTriangle,
   Check,
   CheckCircle,
   Clock,
   Copy,
+  Lock,
   Loader2Icon,
   MessageCircle,
   QrCode,
@@ -19,8 +21,6 @@ import {
 } from "lucide-react";
 import React, { useState, useRef, useEffect } from "react";
 import toast from "react-hot-toast";
-import { BiLock } from "react-icons/bi";
-import { CiWarning } from "react-icons/ci";
 import jsPDF from "jspdf";
 import autoTable from "jspdf-autotable";
 import { GenerateReadableRef } from "@/utils/hash";
@@ -204,6 +204,7 @@ const PaymentModal = ({
     return () => {
       document.body.style.overflow = "auto";
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isOpen]);
 
   const copyToClipboard = (text: string, id: string) => {
@@ -630,7 +631,7 @@ const PaymentModal = ({
                           <p className="text-sm text-white/60 mb-2">{method.description}</p>
                           {method.isDisabled ? (
                             <div className="flex items-center gap-2 text-sm">
-                              <BiLock className="w-4 h-4 text-gray-400" />
+                              <Lock className="w-4 h-4 text-gray-400" />
                               <span>Bientôt Disponible</span>
                             </div>
                           ) : (
@@ -772,7 +773,7 @@ const PaymentModal = ({
                     {/* BLOC D'INFORMATION MIS À JOUR */}
                     <div className="bg-yellow-900/40 border border-yellow-700 rounded-lg p-4 mt-6">
                       <div className="flex items-start gap-3">
-                        <CiWarning className="w-6 h-6 text-yellow-300 flex-shrink-0 mt-1" />
+                        <AlertTriangle className="w-6 h-6 text-yellow-300 flex-shrink-0 mt-1" />
                         <div>
                           <h3 className="font-bold text-yellow-200">
                             Action requise après le téléchargement
@@ -955,7 +956,7 @@ const PaymentModal = ({
                   </div>
                 ) : (
                   <div className="p-6 text-center">
-                    <CiWarning className="text-red-500 mx-auto" size={50} />
+                    <AlertTriangle className="text-red-500 mx-auto w-12 h-12" />
                     <p className="mt-4">Une erreur est survenue. Veuillez réessayer.</p>
                     <button
                       onClick={handleSubmitProof}

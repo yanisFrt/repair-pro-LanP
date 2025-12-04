@@ -1,8 +1,12 @@
 import { LifeBuoy, Users } from "lucide-react";
 
 export const CTASection = ({ scrollTo }: { scrollTo: (target: string) => void }) => {
+  // <section className="py-20 px-4 sm:px-6 lg:px-8 backdrop-blur-sm">
+  {
+    /* bg-white/5 backdrop-blur-sm */
+  }
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 backdrop-blur-sm">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white/5 backdrop-blur-sm">
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
           Prêt à Choisir la Tranquillité ?

@@ -5,10 +5,10 @@ import { useEffect } from "react";
 declare global {
   interface Window {
     gtag?: (
-      command: string,
-      eventName: string,
-      eventParams?: Record<string, string | number | object>
+      command: "config" | "event" | "js",
+      ...args: unknown[]
     ) => void;
+    dataLayer?: unknown[];
   }
 }
 

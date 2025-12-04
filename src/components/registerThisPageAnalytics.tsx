@@ -10,6 +10,7 @@ export const MonitorThisPage = ({ name }: { name: string }) => {
     trackEvent("page_view", {
       [name]: "visit",
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return null;

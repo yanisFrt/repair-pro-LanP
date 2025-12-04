@@ -9,8 +9,6 @@ const config: Config = {
   theme: {
     extend: {
       backgroundImage: {
-        hero: "url('/images/bg.jpg')",
-        supernova: "url('/images/peakpx.jpg')",
         "custom-radial": "radial-gradient(at center, #010109 0%, #030D19 46%, #010109 100%)",
       },
       fontSize: {

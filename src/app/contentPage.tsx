@@ -1,6 +1,5 @@
 "use client";
 
-import ContactModal from "@/components/modals/contact-us-modal";
 import { type Plan } from "@/utils/features";
 import {
   BarChart3,
@@ -13,15 +12,34 @@ import {
   Users,
   Wrench,
 } from "lucide-react";
+import dynamic from "next/dynamic";
 import React, { useEffect, useState } from "react";
-import PaymentModal from "./PaymentModal";
+
+// Lazy load des modales pour optimiser le chargement initial
+const ContactModal = dynamic(() => import("@/components/modals/contact-us-modal"), {
+  ssr: false,
+});
+const PaymentModal = dynamic(() => import("./PaymentModal"), {
+  ssr: false,
+});
+
+// Lazy load des sections non critiques (below the fold)
+const FAQSection = dynamic(() => import("@/components/sections/FaqSection").then(mod => ({ default: mod.FAQSection })), {
+  ssr: true,
+  loading: () => <div className="min-h-screen" />,
+});
+const FreeVersionSection = dynamic(() => import("@/components/sections/FreeVersionSection").then(mod => ({ default: mod.FreeVersionSection })), {
+  ssr: true,
+  loading: () => <div className="min-h-[400px]" />,
+});
+const CTASection = dynamic(() => import("@/components/sections/CtaSection").then(mod => ({ default: mod.CTASection })), {
+  ssr: true,
+  loading: () => <div className="min-h-[300px]" />,
+});
 
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import { useCountryDetection } from "@/hooks/useCountryDetection";
-import { FAQSection } from "@/components/sections/FaqSection";
-import { FreeVersionSection } from "@/components/sections/FreeVersionSection";
-import { CTASection } from "@/components/sections/CtaSection";
 import { ValuesSection } from "@/components/sections/ValuesSection";
 import { FeaturesSection } from "@/components/sections/FeaturesSection";
 import { HeroSection } from "@/components/sections/HeroSection";

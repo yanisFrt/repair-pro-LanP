@@ -38,9 +38,12 @@ export const NavBar = () => {
           {/* Logo */}
           <div className="flex items-center space-x-2">
             <a href="/" className="flex items-center gap-2">
-              <div className="bg-white text-slate-950 rounded-lg w-8 h-8 flex items-center justify-center font-bold text-sm">
-                RP
-              </div>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/LOGO-V2-nobg.png"
+                alt="Repair PRO Logo"
+                className="w-16 h-16 object-contain"
+              />
               <span className="text-white font-semibold text-lg">Repair PRO</span>
             </a>
           </div>
