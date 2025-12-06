@@ -1,0 +1,55 @@
+# Robots.txt for Repair Pro - https://repair-pro.tech
+# Last Updated: December 2024
+
+# Allow all search engines
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /private/
+Disallow: /_next/
+Disallow: /node_modules/
+Disallow: /*.json$
+Disallow: /*.map$
+
+# Specific rules for Googlebot
+User-agent: Googlebot
+Allow: /
+Allow: /blog/
+Allow: /download/
+Allow: /pricing/
+Crawl-delay: 0
+
+# Specific rules for Bingbot
+User-agent: Bingbot
+Allow: /
+Allow: /blog/
+Allow: /download/
+Allow: /pricing/
+Crawl-delay: 0
+
+# Block bad bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+# Allow Twitter bot for card generation
+User-agent: Twitterbot
+Allow: /
+
+# Allow Facebook bot for Open Graph
+User-agent: facebookexternalhit
+Allow: /
+
+# Allow LinkedIn bot
+User-agent: LinkedInBot
+Allow: /
+
+# Sitemap location
+Sitemap: https://repair-pro.tech/sitemap.xml
+Sitemap: https://repair-pro.tech/sitemap-blog.xml
