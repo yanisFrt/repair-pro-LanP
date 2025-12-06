@@ -21,7 +21,8 @@ const nextConfig = {
 
   // Optimisation du bundle
   swcMinify: true,
-  productionBrowserSourceMaps: false,
+  // Activé pour debugging en production (désactiver après résolution des problèmes)
+  productionBrowserSourceMaps: true,
 
   compiler: {
     // Supprime les console.log en production
@@ -51,6 +52,10 @@ const nextConfig = {
       "framer-motion",
       "@headlessui/react",
     ],
+    // Optimise le CSS en production
+    optimizeCss: true,
+    // Améliore les performances du serveur
+    serverComponentsExternalPackages: [],
   },
 
   // Variables d'environnement publiques
@@ -60,7 +65,7 @@ const nextConfig = {
   },
 
   // Configuration webpack personnalisée
-  webpack: (config, { isServer }) => {
+  webpack: (config, { isServer, dev }) => {
     // Optimisations côté client
     if (!isServer) {
       config.resolve.fallback = {
@@ -68,6 +73,11 @@ const nextConfig = {
         fs: false,
         net: false,
         tls: false,
+      }
+
+      // Source maps pour production (meilleure qualité)
+      if (!dev) {
+        config.devtool = 'source-map'
       }
     }
 

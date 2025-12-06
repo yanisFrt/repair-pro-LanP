@@ -21,7 +21,11 @@ export default function DynamicFooter() {
               <img
                 src="/LOGO-V2-nobg.png"
                 alt="Repair PRO Logo"
+                width="64"
+                height="64"
                 className="w-16 h-16 object-contain"
+                loading="lazy"
+                decoding="async"
               />
               <span className="text-white font-semibold text-lg">Repair PRO</span>
             </div>
@@ -32,20 +36,26 @@ export default function DynamicFooter() {
               <a
                 href="#"
                 className="bg-slate-800 hover:bg-slate-700 transition-colors rounded-lg p-2"
+                aria-label="Suivez-nous sur Twitter"
+                title="Suivez-nous sur Twitter"
               >
-                <Twitter className="w-4 h-4" />
+                <Twitter className="w-4 h-4" aria-hidden="true" />
               </a>
               <a
                 href="#"
                 className="bg-slate-800 hover:bg-slate-700 transition-colors rounded-lg p-2"
+                aria-label="Suivez-nous sur LinkedIn"
+                title="Suivez-nous sur LinkedIn"
               >
-                <Linkedin className="w-4 h-4" />
+                <Linkedin className="w-4 h-4" aria-hidden="true" />
               </a>
               <a
                 href="#"
                 className="bg-slate-800 hover:bg-slate-700 transition-colors rounded-lg p-2"
+                aria-label="Visitez notre GitHub"
+                title="Visitez notre GitHub"
               >
-                <Github className="w-4 h-4" />
+                <Github className="w-4 h-4" aria-hidden="true" />
               </a>
             </div>
           </div>
