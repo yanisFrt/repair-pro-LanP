@@ -126,7 +126,7 @@ export default function DynamicFooter() {
                 </a>
               </li>
               <li>
-                <a href="#" className="text-sm hover:text-white transition-colors">
+                <a href="/terms" className="text-sm hover:text-white transition-colors">
                   {t("footer.links.terms")}
                 </a>
               </li>

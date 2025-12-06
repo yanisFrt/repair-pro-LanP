@@ -72,8 +72,8 @@ const PAYMENT_CONFIG = {
     accountName: "Codes Nova",
   },
   contact: {
-    whatsapp: "213540960479",
-    phone: "0540 96 04 79",
+    whatsapp: "213554319903",
+    phone: "+213 554 31 99 03",
     email: "paiement@codesnova.com",
   },
   office: {
