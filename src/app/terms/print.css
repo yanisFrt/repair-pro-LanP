@@ -1,0 +1,108 @@
+/* Print styles for Terms of Use page */
+@media print {
+  /* Hide non-essential elements */
+  nav,
+  footer,
+  .print\:hidden,
+  aside {
+    display: none !important;
+  }
+
+  /* Reset page margins */
+  @page {
+    margin: 2cm;
+    size: A4;
+  }
+
+  /* Optimize colors for print */
+  body {
+    background: white !important;
+    color: black !important;
+  }
+
+  /* Remove backgrounds from colored sections */
+  .bg-gradient-to-r,
+  .bg-gradient-to-b,
+  .bg-custom-radial,
+  .bg-white\/5,
+  .bg-gray-900 {
+    background: white !important;
+    color: black !important;
+  }
+
+  /* Make borders visible */
+  .border-l-4 {
+    border-color: #6ABBB2 !important;
+  }
+
+  /* Ensure text is readable */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: black !important;
+    page-break-after: avoid;
+  }
+
+  /* Avoid breaking content */
+  section {
+    page-break-inside: avoid;
+  }
+
+  /* Optimize links for print */
+  a {
+    color: black !important;
+    text-decoration: underline;
+  }
+
+  a[href]:after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    font-style: italic;
+  }
+
+  /* Remove shadows */
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /* Optimize spacing */
+  .py-20 {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
+
+  .py-16 {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
+
+  /* Make circular numbers visible */
+  .bg-custom-teal {
+    background: #6ABBB2 !important;
+    color: white !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Ensure proper font sizes */
+  body {
+    font-size: 12pt;
+    line-height: 1.5;
+  }
+
+  h1 {
+    font-size: 24pt;
+  }
+
+  h2 {
+    font-size: 18pt;
+  }
+
+  p {
+    font-size: 12pt;
+  }
+}

@@ -196,5 +196,60 @@
     },
     "rights": "Tous droits réservés",
     "createdBy": "Créé par"
+  },
+  "terms": {
+    "title": "Conditions Générales d'Utilisation",
+    "lastUpdated": "Dernière mise à jour",
+    "sections": {
+      "acceptance": {
+        "title": "1. Acceptation des Conditions",
+        "content": "En accédant et en utilisant le logiciel REPAIR PRO (ci-après \"le Service\"), vous acceptez d'être lié par les présentes Conditions Générales d'Utilisation. Si vous n'acceptez pas ces conditions, veuillez ne pas utiliser le Service. L'utilisation continue du Service constitue votre acceptation de toute modification apportée à ces conditions."
+      },
+      "serviceDescription": {
+        "title": "2. Description du Service",
+        "content": "REPAIR PRO est un logiciel de gestion d'atelier de réparation qui permet aux professionnels de gérer leurs réparations, stocks, clients, factures et tickets. Le Service est fourni sous forme d'application desktop (Windows, Linux) et mobile (Android à venir), avec des fonctionnalités cloud optionnelles selon le plan d'abonnement choisi."
+      },
+      "license": {
+        "title": "3. Licence et Restrictions d'Utilisation",
+        "content": "Nous vous accordons une licence limitée, non exclusive, non transférable et révocable pour utiliser le Service conformément au plan d'abonnement que vous avez choisi. Vous vous engagez à : (a) ne pas copier, modifier, distribuer, vendre ou louer toute partie du Service ; (b) ne pas effectuer de rétro-ingénierie ou tenter d'extraire le code source ; (c) ne pas utiliser le Service à des fins illégales ou non autorisées ; (d) respecter le nombre de postes de travail autorisés par votre plan."
+      },
+      "userAccounts": {
+        "title": "4. Comptes Utilisateurs",
+        "content": "Vous êtes responsable de maintenir la confidentialité de vos identifiants de connexion et de toutes les activités effectuées sous votre compte. Vous devez nous informer immédiatement de toute utilisation non autorisée de votre compte. Vous garantissez que toutes les informations fournies lors de l'inscription sont exactes, complètes et à jour."
+      },
+      "payments": {
+        "title": "5. Paiements et Abonnements",
+        "content": "Les frais d'abonnement sont facturés selon la périodicité choisie (mensuelle ou annuelle). Les paiements sont non remboursables sauf disposition légale contraire. En cas de non-paiement, nous nous réservons le droit de suspendre ou résilier votre accès au Service. Les prix peuvent être modifiés moyennant un préavis de 30 jours. Vous serez facturé automatiquement à chaque période de renouvellement sauf annulation préalable."
+      },
+      "intellectualProperty": {
+        "title": "6. Propriété Intellectuelle",
+        "content": "Tous les droits de propriété intellectuelle relatifs au Service, incluant mais non limités aux logiciels, designs, textes, graphiques, logos et marques, appartiennent exclusivement à REPAIR PRO ou à ses concédants de licence. Vos données clients et données de réparation vous appartiennent. Nous ne revendiquons aucun droit de propriété sur vos données, mais vous nous accordez une licence limitée pour les traiter dans le cadre de la fourniture du Service."
+      },
+      "dataProtection": {
+        "title": "7. Protection des Données Personnelles",
+        "content": "Nous nous engageons à protéger vos données personnelles conformément au RGPD et aux lois applicables. Les données collectées sont utilisées uniquement pour fournir et améliorer le Service. Pour les plans incluant la sauvegarde cloud, vos données sont chiffrées et stockées sur des serveurs sécurisés. Consultez notre Politique de Confidentialité pour plus de détails sur le traitement de vos données."
+      },
+      "warranties": {
+        "title": "8. Garanties et Responsabilités",
+        "content": "Le Service est fourni \"en l'état\" sans garantie d'aucune sorte. Nous nous efforçons d'assurer une disponibilité maximale, mais ne garantissons pas un service ininterrompu ou exempt d'erreurs. Notre responsabilité totale envers vous ne pourra excéder les montants payés par vous au cours des 12 derniers mois. Nous ne serons pas responsables des dommages indirects, accessoires ou consécutifs."
+      },
+      "termination": {
+        "title": "9. Résiliation",
+        "content": "Vous pouvez résilier votre abonnement à tout moment depuis votre espace client. La résiliation prendra effet à la fin de la période de facturation en cours. Nous nous réservons le droit de suspendre ou résilier votre accès en cas de violation de ces conditions, avec ou sans préavis. En cas de résiliation, vous conservez l'accès à vos données pendant 30 jours pour permettre leur exportation."
+      },
+      "modifications": {
+        "title": "10. Modifications des Conditions",
+        "content": "Nous nous réservons le droit de modifier ces Conditions Générales d'Utilisation à tout moment. Les modifications substantielles vous seront notifiées par email ou via le Service au moins 30 jours avant leur entrée en vigueur. Votre utilisation continue du Service après l'entrée en vigueur des modifications constitue votre acceptation des nouvelles conditions."
+      },
+      "governingLaw": {
+        "title": "11. Droit Applicable et Juridiction",
+        "content": "Ces conditions sont régies par le droit français. Tout litige relatif à l'interprétation ou à l'exécution des présentes sera soumis à la compétence exclusive des tribunaux français, sauf dispositions impératives contraires applicables aux consommateurs."
+      },
+      "contact": {
+        "title": "12. Contact",
+        "content": "Pour toute question concernant ces Conditions Générales d'Utilisation, veuillez nous contacter à l'adresse : support@repairpro.com ou via notre support WhatsApp disponible pour les abonnés."
+      }
+    },
+    "effectiveDate": "Date d'entrée en vigueur : 6 décembre 2025"
   }
 }

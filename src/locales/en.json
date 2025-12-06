@@ -196,5 +196,60 @@
     },
     "rights": "All rights reserved",
     "createdBy": "Created by"
+  },
+  "terms": {
+    "title": "Terms of Use",
+    "lastUpdated": "Last updated",
+    "sections": {
+      "acceptance": {
+        "title": "1. Acceptance of Terms",
+        "content": "By accessing and using the REPAIR PRO software (hereinafter \"the Service\"), you agree to be bound by these Terms of Use. If you do not accept these terms, please do not use the Service. Continued use of the Service constitutes your acceptance of any modifications made to these terms."
+      },
+      "serviceDescription": {
+        "title": "2. Service Description",
+        "content": "REPAIR PRO is a repair shop management software that enables professionals to manage their repairs, inventory, customers, invoices, and tickets. The Service is provided as a desktop application (Windows, Linux) and mobile (Android coming soon), with optional cloud features depending on the chosen subscription plan."
+      },
+      "license": {
+        "title": "3. License and Usage Restrictions",
+        "content": "We grant you a limited, non-exclusive, non-transferable, and revocable license to use the Service in accordance with your chosen subscription plan. You agree to: (a) not copy, modify, distribute, sell, or lease any part of the Service; (b) not reverse engineer or attempt to extract the source code; (c) not use the Service for illegal or unauthorized purposes; (d) comply with the number of workstations authorized by your plan."
+      },
+      "userAccounts": {
+        "title": "4. User Accounts",
+        "content": "You are responsible for maintaining the confidentiality of your login credentials and all activities performed under your account. You must notify us immediately of any unauthorized use of your account. You warrant that all information provided during registration is accurate, complete, and up to date."
+      },
+      "payments": {
+        "title": "5. Payments and Subscriptions",
+        "content": "Subscription fees are billed according to the chosen frequency (monthly or annually). Payments are non-refundable except as required by law. In case of non-payment, we reserve the right to suspend or terminate your access to the Service. Prices may be modified with 30 days' notice. You will be automatically billed at each renewal period unless previously cancelled."
+      },
+      "intellectualProperty": {
+        "title": "6. Intellectual Property",
+        "content": "All intellectual property rights relating to the Service, including but not limited to software, designs, texts, graphics, logos, and trademarks, belong exclusively to REPAIR PRO or its licensors. Your customer data and repair data belong to you. We claim no ownership rights over your data, but you grant us a limited license to process it as part of providing the Service."
+      },
+      "dataProtection": {
+        "title": "7. Personal Data Protection",
+        "content": "We are committed to protecting your personal data in accordance with GDPR and applicable laws. Data collected is used solely to provide and improve the Service. For plans including cloud backup, your data is encrypted and stored on secure servers. Please consult our Privacy Policy for more details on how we process your data."
+      },
+      "warranties": {
+        "title": "8. Warranties and Liabilities",
+        "content": "The Service is provided \"as is\" without warranty of any kind. We strive to ensure maximum availability but do not guarantee uninterrupted or error-free service. Our total liability to you cannot exceed the amounts paid by you over the past 12 months. We will not be liable for indirect, incidental, or consequential damages."
+      },
+      "termination": {
+        "title": "9. Termination",
+        "content": "You may terminate your subscription at any time from your customer area. Termination will take effect at the end of the current billing period. We reserve the right to suspend or terminate your access in case of violation of these terms, with or without notice. Upon termination, you retain access to your data for 30 days to allow for export."
+      },
+      "modifications": {
+        "title": "10. Modifications to Terms",
+        "content": "We reserve the right to modify these Terms of Use at any time. Substantial modifications will be notified to you by email or via the Service at least 30 days before they take effect. Your continued use of the Service after the modifications take effect constitutes your acceptance of the new terms."
+      },
+      "governingLaw": {
+        "title": "11. Governing Law and Jurisdiction",
+        "content": "These terms are governed by French law. Any dispute relating to the interpretation or execution of these terms will be subject to the exclusive jurisdiction of French courts, except for mandatory provisions applicable to consumers."
+      },
+      "contact": {
+        "title": "12. Contact",
+        "content": "For any questions regarding these Terms of Use, please contact us at: support@repairpro.com or via our WhatsApp support available to subscribers."
+      }
+    },
+    "effectiveDate": "Effective date: December 6, 2025"
   }
 }

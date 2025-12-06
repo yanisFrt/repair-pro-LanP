@@ -196,5 +196,60 @@
     },
     "rights": "Todos los derechos reservados",
     "createdBy": "Creado por"
+  },
+  "terms": {
+    "title": "Términos de Uso",
+    "lastUpdated": "Última actualización",
+    "sections": {
+      "acceptance": {
+        "title": "1. Aceptación de los Términos",
+        "content": "Al acceder y utilizar el software REPAIR PRO (en adelante \"el Servicio\"), usted acepta estar vinculado por estos Términos de Uso. Si no acepta estos términos, por favor no utilice el Servicio. El uso continuado del Servicio constituye su aceptación de cualquier modificación realizada a estos términos."
+      },
+      "serviceDescription": {
+        "title": "2. Descripción del Servicio",
+        "content": "REPAIR PRO es un software de gestión de talleres de reparación que permite a los profesionales gestionar sus reparaciones, inventario, clientes, facturas y tickets. El Servicio se proporciona como aplicación de escritorio (Windows, Linux) y móvil (Android próximamente), con funcionalidades en la nube opcionales según el plan de suscripción elegido."
+      },
+      "license": {
+        "title": "3. Licencia y Restricciones de Uso",
+        "content": "Le otorgamos una licencia limitada, no exclusiva, intransferible y revocable para usar el Servicio de acuerdo con el plan de suscripción que haya elegido. Usted se compromete a: (a) no copiar, modificar, distribuir, vender o arrendar ninguna parte del Servicio; (b) no realizar ingeniería inversa ni intentar extraer el código fuente; (c) no utilizar el Servicio con fines ilegales o no autorizados; (d) respetar el número de estaciones de trabajo autorizadas por su plan."
+      },
+      "userAccounts": {
+        "title": "4. Cuentas de Usuario",
+        "content": "Usted es responsable de mantener la confidencialidad de sus credenciales de inicio de sesión y de todas las actividades realizadas bajo su cuenta. Debe informarnos inmediatamente de cualquier uso no autorizado de su cuenta. Usted garantiza que toda la información proporcionada durante el registro es precisa, completa y actualizada."
+      },
+      "payments": {
+        "title": "5. Pagos y Suscripciones",
+        "content": "Las tarifas de suscripción se facturan según la frecuencia elegida (mensual o anual). Los pagos no son reembolsables excepto cuando lo exija la ley. En caso de falta de pago, nos reservamos el derecho de suspender o cancelar su acceso al Servicio. Los precios pueden modificarse con un aviso de 30 días. Se le facturará automáticamente en cada período de renovación a menos que se cancele previamente."
+      },
+      "intellectualProperty": {
+        "title": "6. Propiedad Intelectual",
+        "content": "Todos los derechos de propiedad intelectual relacionados con el Servicio, incluyendo pero no limitado a software, diseños, textos, gráficos, logotipos y marcas comerciales, pertenecen exclusivamente a REPAIR PRO o a sus licenciantes. Sus datos de clientes y datos de reparación le pertenecen. No reclamamos ningún derecho de propiedad sobre sus datos, pero usted nos otorga una licencia limitada para procesarlos como parte de la prestación del Servicio."
+      },
+      "dataProtection": {
+        "title": "7. Protección de Datos Personales",
+        "content": "Nos comprometemos a proteger sus datos personales de conformidad con el RGPD y las leyes aplicables. Los datos recopilados se utilizan únicamente para proporcionar y mejorar el Servicio. Para los planes que incluyen copia de seguridad en la nube, sus datos se cifran y almacenan en servidores seguros. Consulte nuestra Política de Privacidad para más detalles sobre cómo procesamos sus datos."
+      },
+      "warranties": {
+        "title": "8. Garantías y Responsabilidades",
+        "content": "El Servicio se proporciona \"tal cual\" sin garantía de ningún tipo. Nos esforzamos por garantizar la máxima disponibilidad, pero no garantizamos un servicio ininterrumpido o sin errores. Nuestra responsabilidad total hacia usted no podrá exceder los montos pagados por usted en los últimos 12 meses. No seremos responsables de daños indirectos, incidentales o consecuentes."
+      },
+      "termination": {
+        "title": "9. Terminación",
+        "content": "Puede cancelar su suscripción en cualquier momento desde su área de cliente. La cancelación tendrá efecto al final del período de facturación actual. Nos reservamos el derecho de suspender o cancelar su acceso en caso de violación de estos términos, con o sin previo aviso. Al finalizar, conserva el acceso a sus datos durante 30 días para permitir su exportación."
+      },
+      "modifications": {
+        "title": "10. Modificaciones a los Términos",
+        "content": "Nos reservamos el derecho de modificar estos Términos de Uso en cualquier momento. Las modificaciones sustanciales se le notificarán por correo electrónico o a través del Servicio al menos 30 días antes de que entren en vigor. Su uso continuado del Servicio después de que las modificaciones entren en vigor constituye su aceptación de los nuevos términos."
+      },
+      "governingLaw": {
+        "title": "11. Ley Aplicable y Jurisdicción",
+        "content": "Estos términos se rigen por la ley francesa. Cualquier disputa relacionada con la interpretación o ejecución de estos términos estará sujeta a la jurisdicción exclusiva de los tribunales franceses, excepto las disposiciones imperativas aplicables a los consumidores."
+      },
+      "contact": {
+        "title": "12. Contacto",
+        "content": "Para cualquier pregunta sobre estos Términos de Uso, póngase en contacto con nosotros en: support@repairpro.com o a través de nuestro soporte de WhatsApp disponible para suscriptores."
+      }
+    },
+    "effectiveDate": "Fecha de entrada en vigor: 6 de diciembre de 2025"
   }
 }
