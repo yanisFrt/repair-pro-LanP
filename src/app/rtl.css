@@ -1,0 +1,266 @@
+/* RTL (Right-to-Left) styles for Arabic */
+
+/* Base RTL adjustments */
+[dir="rtl"] {
+  text-align: right;
+}
+
+[dir="rtl"] body {
+  direction: rtl;
+}
+
+/* Flex and Grid reversals - Keep normal flow for flex, icons will be positioned correctly */
+[dir="rtl"] .flex-col {
+  flex-direction: column;
+}
+
+/* Margin adjustments - swap left/right */
+[dir="rtl"] .ml-1 { margin-right: 0.25rem !important; margin-left: 0 !important; }
+[dir="rtl"] .mr-1 { margin-left: 0.25rem !important; margin-right: 0 !important; }
+[dir="rtl"] .ml-2 { margin-right: 0.5rem !important; margin-left: 0 !important; }
+[dir="rtl"] .mr-2 { margin-left: 0.5rem !important; margin-right: 0 !important; }
+[dir="rtl"] .ml-3 { margin-right: 0.75rem !important; margin-left: 0 !important; }
+[dir="rtl"] .mr-3 { margin-left: 0.75rem !important; margin-right: 0 !important; }
+[dir="rtl"] .ml-4 { margin-right: 1rem !important; margin-left: 0 !important; }
+[dir="rtl"] .mr-4 { margin-left: 1rem !important; margin-right: 0 !important; }
+[dir="rtl"] .ml-6 { margin-right: 1.5rem !important; margin-left: 0 !important; }
+[dir="rtl"] .mr-6 { margin-left: 1.5rem !important; margin-right: 0 !important; }
+[dir="rtl"] .ml-auto { margin-right: auto !important; margin-left: 0 !important; }
+[dir="rtl"] .mr-auto { margin-left: auto !important; margin-right: 0 !important; }
+
+/* Padding adjustments - swap left/right */
+[dir="rtl"] .pl-2 { padding-right: 0.5rem; padding-left: 0; }
+[dir="rtl"] .pr-2 { padding-left: 0.5rem; padding-right: 0; }
+[dir="rtl"] .pl-3 { padding-right: 0.75rem; padding-left: 0; }
+[dir="rtl"] .pr-3 { padding-left: 0.75rem; padding-right: 0; }
+[dir="rtl"] .pl-4 { padding-right: 1rem; padding-left: 0; }
+[dir="rtl"] .pr-4 { padding-left: 1rem; padding-right: 0; }
+[dir="rtl"] .pl-6 { padding-right: 1.5rem; padding-left: 0; }
+[dir="rtl"] .pr-6 { padding-left: 1.5rem; padding-right: 0; }
+[dir="rtl"] .pl-8 { padding-right: 2rem; padding-left: 0; }
+[dir="rtl"] .pr-8 { padding-left: 2rem; padding-right: 0; }
+
+/* Border radius - swap left/right */
+[dir="rtl"] .rounded-l { border-radius: 0 0.375rem 0.375rem 0; }
+[dir="rtl"] .rounded-r { border-radius: 0.375rem 0 0 0.375rem; }
+[dir="rtl"] .rounded-tl { border-top-right-radius: 0.375rem; border-top-left-radius: 0; }
+[dir="rtl"] .rounded-tr { border-top-left-radius: 0.375rem; border-top-right-radius: 0; }
+[dir="rtl"] .rounded-bl { border-bottom-right-radius: 0.375rem; border-bottom-left-radius: 0; }
+[dir="rtl"] .rounded-br { border-bottom-left-radius: 0.375rem; border-bottom-right-radius: 0; }
+
+/* Text alignment */
+[dir="rtl"] .text-left { text-align: right; }
+[dir="rtl"] .text-right { text-align: left; }
+
+/* Transform and translate */
+[dir="rtl"] .translate-x-1 { transform: translateX(-0.25rem); }
+[dir="rtl"] .-translate-x-1 { transform: translateX(0.25rem); }
+[dir="rtl"] .translate-x-2 { transform: translateX(-0.5rem); }
+[dir="rtl"] .-translate-x-2 { transform: translateX(0.5rem); }
+[dir="rtl"] .-translate-x-1\/2 { transform: translateX(50%); }
+
+/* Icons and buttons spacing - More specific rules */
+/* When icon is after text (LTR has ml-, RTL needs mr-) */
+[dir="rtl"] button > svg[class*="ml-"],
+[dir="rtl"] a > svg[class*="ml-"] {
+  margin-left: 0 !important;
+  margin-right: 0.5rem !important;
+}
+
+/* When icon is before text (LTR has mr-, RTL needs ml-) */
+[dir="rtl"] button > svg[class*="mr-"],
+[dir="rtl"] a > svg[class*="mr-"],
+[dir="rtl"] li > svg[class*="mr-"],
+[dir="rtl"] div > svg[class*="mr-"] {
+  margin-right: 0 !important;
+  margin-left: 0.75rem !important;
+}
+
+/* Special handling for flex items with icons */
+[dir="rtl"] .flex.items-center > svg {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+[dir="rtl"] .flex.items-start > svg {
+  margin-left: 0.75rem;
+  margin-right: 0;
+}
+
+/* Grid auto-flow */
+[dir="rtl"] .grid {
+  direction: rtl;
+}
+
+/* Flex gap handling - gaps work the same in RTL */
+[dir="rtl"] .gap-1 { gap: 0.25rem; }
+[dir="rtl"] .gap-2 { gap: 0.5rem; }
+[dir="rtl"] .gap-3 { gap: 0.75rem; }
+[dir="rtl"] .gap-4 { gap: 1rem; }
+[dir="rtl"] .gap-6 { gap: 1.5rem; }
+[dir="rtl"] .gap-8 { gap: 2rem; }
+[dir="rtl"] .gap-12 { gap: 3rem; }
+
+/* Flex direction for RTL - items should flow from right to left */
+[dir="rtl"] .flex:not(.flex-col):not(.flex-row) {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .flex-row {
+  flex-direction: row-reverse;
+}
+
+/* Items alignment in flex containers */
+[dir="rtl"] .justify-start {
+  justify-content: flex-end;
+}
+
+[dir="rtl"] .justify-end {
+  justify-content: flex-start;
+}
+
+[dir="rtl"] .items-start {
+  align-items: flex-start;
+}
+
+/* List items */
+[dir="rtl"] ul,
+[dir="rtl"] ol {
+  padding-right: 1.5rem;
+  padding-left: 0;
+}
+
+/* Float adjustments */
+[dir="rtl"] .float-left { float: right; }
+[dir="rtl"] .float-right { float: left; }
+
+/* Positions */
+[dir="rtl"] .left-0 { right: 0; left: auto; }
+[dir="rtl"] .right-0 { left: 0; right: auto; }
+[dir="rtl"] .left-auto { right: auto; }
+[dir="rtl"] .right-auto { left: auto; }
+
+/* Shadows with direction */
+[dir="rtl"] .shadow-lg {
+  box-shadow: -10px 10px 15px -3px rgb(0 0 0 / 0.1);
+}
+
+/* IMPORTANT: Keep numbers in LTR direction even in RTL mode */
+/* This prevents numbers from being reversed in Arabic */
+[dir="rtl"] .price-amount,
+[dir="rtl"] .price-value,
+[dir="rtl"] .number,
+[dir="rtl"] .numeric,
+[dir="rtl"] [data-numeric],
+[dir="rtl"] .text-2xl:has(span),
+[dir="rtl"] .text-3xl:has(span),
+[dir="rtl"] .text-4xl:has(span),
+[dir="rtl"] .text-5xl:has(span),
+[dir="rtl"] .text-6xl:has(span) {
+  direction: ltr !important;
+  unicode-bidi: embed !important;
+}
+
+/* Specific selectors for price displays */
+[dir="rtl"] span[class*="text-"][class*="xl"],
+[dir="rtl"] span[class*="font-bold"]:not(:has(*)) {
+  direction: ltr !important;
+  unicode-bidi: isolate !important;
+}
+
+/* Keep inline numbers in correct order */
+[dir="rtl"] *:not(input):not(textarea) {
+  unicode-bidi: plaintext;
+}
+
+/* Specific handling for numeric content */
+[dir="rtl"] .pricing-card .text-5xl,
+[dir="rtl"] .pricing-card .text-4xl,
+[dir="rtl"] .pricing-card .text-3xl,
+[dir="rtl"] .pricing-card span,
+[dir="rtl"] [class*="price"] {
+  direction: ltr !important;
+  display: inline-block !important;
+  unicode-bidi: isolate !important;
+}
+
+/* Ensure phone numbers, dates, and percentages stay LTR */
+[dir="rtl"] .tel,
+[dir="rtl"] .date,
+[dir="rtl"] .percentage,
+[dir="rtl"] .stats,
+[dir="rtl"] time,
+[dir="rtl"] [type="tel"],
+[dir="rtl"] [type="number"],
+[dir="rtl"] [type="date"] {
+  direction: ltr !important;
+  unicode-bidi: embed !important;
+}
+
+/* Fix for currency symbols with numbers */
+[dir="rtl"] .currency {
+  direction: ltr !important;
+  unicode-bidi: bidi-override !important;
+}
+
+/* ========================================
+   AMÉLIORATION DE LA LISIBILITÉ ARABE
+   Harmonisation des polices avec les autres langues
+   ======================================== */
+
+/* Line-height légèrement augmenté pour meilleure lisibilité de l'arabe */
+/* Les tailles de police restent identiques aux autres langues pour harmonie parfaite */
+[dir="rtl"] {
+  line-height: 1.6;
+}
+
+/* Titres - même taille que les autres langues, line-height optimisé */
+[dir="rtl"] h1 {
+  line-height: 1.3;
+}
+
+[dir="rtl"] h2 {
+  line-height: 1.4;
+}
+
+[dir="rtl"] h3 {
+  line-height: 1.4;
+}
+
+[dir="rtl"] h4,
+[dir="rtl"] h5,
+[dir="rtl"] h6 {
+  line-height: 1.5;
+}
+
+/* Texte des paragraphes */
+[dir="rtl"] p {
+  line-height: 1.7;
+}
+
+/* Texte des listes */
+[dir="rtl"] li {
+  line-height: 1.6;
+}
+
+/* FAQ et contenu long */
+[dir="rtl"] .faq-question {
+  line-height: 1.6;
+}
+
+[dir="rtl"] .faq-answer {
+  line-height: 1.7;
+}
+
+/* Cards et conteneurs */
+[dir="rtl"] .card-description,
+[dir="rtl"] .card-text {
+  line-height: 1.6;
+}
+
+/* Optimisation pour mobile en RTL */
+@media (max-width: 768px) {
+  [dir="rtl"] p {
+    line-height: 1.8;
+  }
+}

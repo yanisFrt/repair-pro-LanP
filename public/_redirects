@@ -1,0 +1,18 @@
+# Redirections pour Netlify
+# https://docs.netlify.com/routing/redirects/
+
+# Redirections 301 permanentes
+/home              /                   301
+/prix              /#pricing           301
+/fonctionnalites   /#features          301
+/tarifs            /#pricing           301
+/telecharger       /download           301
+
+# Redirections pour les langues
+/fr/*              /:splat             302
+/en                /                   302  Language=en
+/es                /                   302  Language=es
+/ar                /                   302  Language=ar
+
+# Gestion des erreurs 404
+/*                 /404.html           404
