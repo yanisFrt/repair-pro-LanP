@@ -21,8 +21,6 @@ import {
 } from "lucide-react";
 import React, { useState, useRef, useEffect } from "react";
 import toast from "react-hot-toast";
-import jsPDF from "jspdf";
-import autoTable from "jspdf-autotable";
 import { GenerateReadableRef } from "@/utils/hash";
 import { checkUserExists } from "@/utils/api";
 import { useGtagEvent } from "@/hooks/useGTagEvent";
@@ -333,13 +331,23 @@ const PaymentModal = ({
     return null;
   }
 
-  const generateCcpPdf = () => {
+  const generateCcpPdf = async () => {
     if (!selectedPlan || !customerInfo) {
       toast.error("Les informations de la commande sont manquantes.");
       return;
     }
 
-    const doc = new jsPDF();
+    // Afficher un toast de chargement
+    const loadingToast = toast.loading("Génération du PDF en cours...");
+
+    try {
+      // Import dynamique de jsPDF pour réduire le bundle principal
+      const [{ default: jsPDF }, { default: autoTable }] = await Promise.all([
+        import("jspdf"),
+        import("jspdf-autotable"),
+      ]);
+
+      const doc = new jsPDF();
     const paymentEmail = PAYMENT_CONFIG.contact.paymentEmail;
     const whatsappLink = `https://wa.me/${PAYMENT_CONFIG.contact.whatsapp}`;
     const pageHeight = doc.internal.pageSize.getHeight();
@@ -476,8 +484,14 @@ const PaymentModal = ({
     doc.text("Merci pour votre confiance.", 14, pageHeight - 12);
     doc.text("CodesNova Services", pageWidth - 14, pageHeight - 12, { align: "right" });
 
-    // --- SAUVEGARDE ---
-    doc.save(`Instructions_Paiement_RepairPro_CCP_${orderReference}.pdf`);
+      // --- SAUVEGARDE ---
+      doc.save(`Instructions_Paiement_RepairPro_CCP_${orderReference}.pdf`);
+
+      toast.success("PDF généré avec succès !", { id: loadingToast });
+    } catch (error) {
+      console.error("Erreur lors de la génération du PDF:", error);
+      toast.error("Erreur lors de la génération du PDF", { id: loadingToast });
+    }
   };
 
   return (

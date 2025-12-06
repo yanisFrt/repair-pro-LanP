@@ -131,10 +131,15 @@ export default function RootLayout({
     <html lang="fr">
       <head>
         {/* Préchargement des ressources critiques */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://js.stripe.com" />
         <link rel="dns-prefetch" href="https://js.stripe.com" />
+
+        {/* Préchargement des ressources critiques above-the-fold */}
+        <link rel="preload" href="/LOGO-V2-nobg.png" as="image" type="image/png" fetchPriority="high" />
 
         {/* Structured Data */}
         <StructuredData data={organizationSchema} />

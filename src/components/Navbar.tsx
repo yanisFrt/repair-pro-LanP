@@ -45,7 +45,11 @@ export const NavBar = () => {
               <img
                 src="/LOGO-V2-nobg.png"
                 alt="Repair PRO Logo"
+                width="64"
+                height="64"
                 className="w-16 h-16 object-contain"
+                loading="eager"
+                decoding="async"
               />
               <span className="text-white font-semibold text-lg">Repair PRO</span>
             </a>
@@ -91,6 +95,9 @@ export const NavBar = () => {
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="md:hidden p-2 text-gray-300 hover:text-[#6abbb2] transition-colors duration-200"
+              aria-label={isMenuOpen ? "Fermer le menu" : "Ouvrir le menu"}
+              aria-expanded={isMenuOpen}
+              aria-controls="mobile-menu"
             >
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
@@ -101,11 +108,14 @@ export const NavBar = () => {
         <AnimatePresence>
           {isMenuOpen && (
             <motion.div
+              id="mobile-menu"
               className="md:hidden mt-4 py-4 border-t border-[#1f2937]"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.2, ease: "easeOut" }}
+              role="navigation"
+              aria-label="Menu de navigation mobile"
             >
               <div className="flex flex-col space-y-4">
                 {navItems.map((item) => (

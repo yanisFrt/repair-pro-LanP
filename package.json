@@ -36,6 +36,7 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.4.20",
+    "critters": "^0.0.23",
     "eslint": "^8",
     "eslint-config-next": "14.2.11",
     "husky": "^9.1.7",
@@ -47,5 +48,21 @@
   },
   "engines": {
     "node": ">=20.0.0"
+  },
+  "browserslist": {
+    "production": [
+      "defaults and supports es6-module",
+      "maintained node versions"
+    ],
+    "modern": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

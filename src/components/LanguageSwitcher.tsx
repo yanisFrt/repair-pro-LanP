@@ -34,7 +34,9 @@ export const LanguageSwitcher = () => {
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-white/10 transition-colors text-white"
-        aria-label="Select language"
+        aria-label={`Sélectionner la langue (actuel: ${currentLanguage?.name})`}
+        aria-expanded={isOpen}
+        aria-haspopup="true"
       >
         <Globe className="w-5 h-5" />
         <span className="text-lg">{currentLanguage?.flag}</span>
@@ -56,6 +58,9 @@ export const LanguageSwitcher = () => {
               className={`w-full flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2 hover:bg-white/10 transition-colors text-white ${
                 language === lang.code ? "bg-white/5" : ""
               }`}
+              aria-label={`Changer la langue en ${lang.name}`}
+              aria-current={language === lang.code ? "true" : "false"}
+              role="menuitem"
             >
               <span className="text-lg sm:text-xl">{lang.flag}</span>
               <span className="text-xs sm:text-sm font-medium">{lang.name}</span>
