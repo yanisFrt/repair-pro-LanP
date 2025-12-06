@@ -521,7 +521,7 @@ export default function AlgerianPaymentSystem() {
                     </div>
                     <div className="mt-4 p-3 bg-white rounded border border-yellow-300">
                       <p className="text-sm font-semibold text-yellow-800 mb-1">
-                        N'oubliez pas la référence !
+                        N&apos;oubliez pas la référence !
                       </p>
                       <p className="text-sm text-gray-700">
                         Dans le champ Libellé ou Motif, indiquez: <strong>{orderReference}</strong>

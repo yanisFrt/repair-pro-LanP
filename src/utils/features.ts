@@ -47,15 +47,18 @@ export const baseFlags = Object.fromEntries(
  * Returns an array of objects ready for rendering.
  * Each object contains the label and whether the plan has it enabled.
  */
-export function getFeatureRows(plan: Plan) {
+export function getFeatureRows(plan: Plan, t?: (key: string) => string) {
   return ALL_FEATURES.map((feature) => {
     // --- CORRECTION APPLIQUÉE ICI ---
     // Utilise l'optional chaining (?.) pour accéder à la propriété en toute sécurité.
     const isActive = !!plan.flags?.[feature.key];
 
-    let labelWithValue = feature.label;
+    // Use translation if available, otherwise fallback to feature.label
+    const translatedLabel = t ? t(`pricing.features.${feature.key}`) : feature.label;
+
+    let labelWithValue = translatedLabel;
     if (plan.featureValues && plan.featureValues[feature.key] !== undefined) {
-      labelWithValue = `${String(plan.featureValues[feature.key])} ${feature.label}`;
+      labelWithValue = `${String(plan.featureValues[feature.key])} ${translatedLabel}`;
     }
 
     return {

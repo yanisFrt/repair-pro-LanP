@@ -3,9 +3,11 @@
 import React from "react";
 import { Twitter, Linkedin, Github } from "lucide-react";
 import { useCountryDetection } from "@/hooks/useCountryDetection";
+import { useTranslation } from "@/hooks/useTranslation";
 
 export default function DynamicFooter() {
   const { country } = useCountryDetection();
+  const { t } = useTranslation();
   const showCodesNovaLabel = country?.toLowerCase() === "dz";
 
   return (
@@ -24,7 +26,7 @@ export default function DynamicFooter() {
               <span className="text-white font-semibold text-lg">Repair PRO</span>
             </div>
             <p className="text-sm text-slate-400 mb-6 leading-relaxed">
-              {"La plateforme moderne de gestion d'atelier de réparation conçue pour l'efficacité."}
+              {t("footer.tagline")}
             </p>
             <div className="flex gap-3">
               <a
@@ -50,21 +52,21 @@ export default function DynamicFooter() {
 
           {/* Product */}
           <div>
-            <h3 className="text-white font-semibold mb-4">Produit</h3>
+            <h3 className="text-white font-semibold mb-4">{t("footer.product")}</h3>
             <ul className="space-y-3">
               <li>
                 <a href="/#features" className="text-sm hover:text-white transition-colors">
-                  Fonctionnalitées
+                  {t("footer.links.features")}
                 </a>
               </li>
               <li>
                 <a href="/#pricing" className="text-sm hover:text-white transition-colors">
-                  Tarifs
+                  {t("footer.links.pricing")}
                 </a>
               </li>
               <li>
                 <a href="/download" className="text-sm hover:text-white transition-colors">
-                  Téléchargements
+                  {t("footer.links.downloads")}
                 </a>
               </li>
             </ul>
@@ -72,21 +74,21 @@ export default function DynamicFooter() {
 
           {/* Company */}
           <div>
-            <h3 className="text-white font-semibold mb-4">Entreprise</h3>
+            <h3 className="text-white font-semibold mb-4">{t("footer.company")}</h3>
             <ul className="space-y-3">
               <li>
                 <a href="/#about" className="text-sm hover:text-white transition-colors">
-                  A propos
+                  {t("footer.links.about")}
                 </a>
               </li>
               <li>
                 <a href="/blog" className="text-sm hover:text-white transition-colors">
-                  Blog
+                  {t("footer.links.blog")}
                 </a>
               </li>
               <li>
                 <a href="/#contact" className="text-sm hover:text-white transition-colors">
-                  Contact
+                  {t("footer.links.contact")}
                 </a>
               </li>
             </ul>
@@ -94,21 +96,21 @@ export default function DynamicFooter() {
 
           {/* Resources */}
           <div>
-            <h3 className="text-white font-semibold mb-4">Resources</h3>
+            <h3 className="text-white font-semibold mb-4">{t("footer.resources")}</h3>
             <ul className="space-y-3">
               <li>
                 <a href="#" className="text-sm hover:text-white transition-colors">
-                  Documentation
+                  {t("footer.links.documentation")}
                 </a>
               </li>
               <li>
                 <a href="#" className="text-sm hover:text-white transition-colors">
-                  Support
+                  {t("footer.links.support")}
                 </a>
               </li>
               <li>
                 <a href="/status" className="text-sm hover:text-white transition-colors">
-                  {"Status"}
+                  {t("footer.links.status")}
                 </a>
               </li>
             </ul>
@@ -116,26 +118,26 @@ export default function DynamicFooter() {
 
           {/* Legal */}
           <div>
-            <h3 className="text-white font-semibold mb-4">Legal</h3>
+            <h3 className="text-white font-semibold mb-4">{t("footer.legal")}</h3>
             <ul className="space-y-3">
               <li>
                 <a href="#" className="text-sm hover:text-white transition-colors">
-                  {"Politique de confidentialité"}
+                  {t("footer.links.privacy")}
                 </a>
               </li>
               <li>
                 <a href="#" className="text-sm hover:text-white transition-colors">
-                  {"Conditions d'utilisation"}
+                  {t("footer.links.terms")}
                 </a>
               </li>
               <li>
                 <a href="#" className="text-sm hover:text-white transition-colors">
-                  {"Politique des cookies"}
+                  {t("footer.links.cookies")}
                 </a>
               </li>
               <li>
                 <a href="#" className="text-sm hover:text-white transition-colors">
-                  {"RGPD"}
+                  {t("footer.links.gdpr")}
                 </a>
               </li>
             </ul>
@@ -144,12 +146,11 @@ export default function DynamicFooter() {
 
         {/* Bottom Bar */}
         <div className="border-t border-gray-900/50 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-slate-400">© 2025 Repair Pro. Tous droits réservés.</p>
+          <p className="text-sm text-slate-400">© 2025 Repair Pro. {t("footer.rights")}</p>
 
           {showCodesNovaLabel && (
             <p className="text-sm text-slate-400">
-              Créé
-              {/* avec <span className="text-red-500">❤</span>  */} par{" "}
+              {t("footer.createdBy")}{" "}
               <a
                 href="https://codesnova.com/"
                 target="__blank"

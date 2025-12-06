@@ -1,0 +1,200 @@
+{
+  "common": {
+    "download": "Descargar",
+    "learnMore": "Saber más",
+    "getStarted": "Comenzar",
+    "contactUs": "Contáctenos",
+    "loading": "Cargando...",
+    "close": "Cerrar",
+    "send": "Enviar",
+    "cancel": "Cancelar",
+    "popular": "Popular",
+    "year": "Año",
+    "month": "Mes",
+    "soonAvailable": "Próximamente"
+  },
+  "nav": {
+    "home": "Inicio",
+    "features": "Características",
+    "pricing": "Precios",
+    "blog": "Blog",
+    "downloads": "Descargas",
+    "about": "Acerca de",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "badge": "🚀 El socio de crecimiento para profesionales de reparación",
+    "title": "Software que Evoluciona",
+    "titleHighlight": "Con Tu Taller",
+    "subtitle": "Deja de usar herramientas estáticas. Gestiona reparaciones, inventario, clientes y facturas con software siempre actualizado, seguro y respaldado por un equipo dedicado.",
+    "ctaDiscover": "Descubre nuestras ofertas",
+    "ctaFree": "Comenzar Gratis",
+    "platforms": {
+      "windows": "Windows",
+      "linux": "Linux",
+      "android": "Android (Próximamente)"
+    }
+  },
+  "features": {
+    "title": "Todo lo que necesitas para",
+    "titleHighlight": "Gestionar tus Reparaciones",
+    "subtitle": "Desde la recepción del cliente hasta la facturación, REPAIR PRO gestiona todo tu flujo de trabajo.",
+    "list": {
+      "repairs": {
+        "title": "Gestión de reparaciones",
+        "description": "Rastrea el estado de cada reparación, asigna técnicos y optimiza tu flujo de trabajo de principio a fin."
+      },
+      "stock": {
+        "title": "Gestión de inventario",
+        "description": "Monitorea tus niveles de inventario en tiempo real, rastrea el uso de piezas y evita rupturas de stock."
+      },
+      "clients": {
+        "title": "Gestión de clientes",
+        "description": "Mantén un historial completo de clientes, sus dispositivos y todas las reparaciones pasadas."
+      },
+      "billing": {
+        "title": "Facturación simplificada",
+        "description": "Crea facturas y cotizaciones profesionales en pocos clics, personalizadas con tu logo."
+      },
+      "tickets": {
+        "title": "Sistema de tickets",
+        "description": "Genera tickets de reparación claros para tus clientes y rastrea cada paso del proceso interno."
+      },
+      "notifications": {
+        "title": "Notificaciones multicanal",
+        "description": "Mantén a los clientes informados con notificaciones por correo electrónico, SMS y WhatsApp en cada etapa de reparación."
+      },
+      "parts": {
+        "title": "Gestión de piezas",
+        "description": "Cataloga y gestiona piezas de teléfono o dispositivo en detalle, con seguimiento de inventario y costos."
+      },
+      "analytics": {
+        "title": "Análisis completo",
+        "description": "Accede a informes diarios y personalizados por fecha para rastrear el rendimiento de tu taller."
+      },
+      "backup": {
+        "title": "Copia de seguridad en la nube",
+        "description": "Respalda tu base de datos en la nube para proteger tus datos contra pérdidas accidentales."
+      }
+    }
+  },
+  "values": {
+    "title": "Una Inversión, No un Gasto",
+    "titleHighlight": "La Verdadera Diferencia",
+    "subtitle": "Comprende por qué una asociación continua supera con creces una compra única y arriesgada.",
+    "lifetime": {
+      "title": "Licencia 'de por Vida' (La Trampa)",
+      "points": [
+        "Soporte técnico lento, de pago o inexistente.",
+        "Sin actualizaciones, el software se vuelve obsoleto rápidamente.",
+        "Vulnerable a nuevos errores y fallas de seguridad.",
+        "Datos locales: riesgo de pérdida total en caso de falla.",
+        "Te obliga a comprar una 'V2' para cualquier función nueva."
+      ]
+    },
+    "subscription": {
+      "title": "Nuestra Suscripción (La Asociación)",
+      "points": [
+        "Soporte prioritario de WhatsApp, ultra receptivo incluido.",
+        "Actualizaciones mensuales con nuevas características.",
+        "Seguridad y rendimiento constantemente mejorados.",
+        "Copias de seguridad automáticas y seguras de tus datos.",
+        "Una herramienta que crece contigo, sin costo adicional."
+      ]
+    }
+  },
+  "pricing": {
+    "title": "Simple y Transparente",
+    "titleHighlight": "Precios",
+    "subtitle": "Elige el plan que se adapte a tus necesidades y comienza a transformar tu taller hoy.",
+    "plans": {
+      "starter": {
+        "name": "INICIAL",
+        "description": "Perfecto para empezar"
+      },
+      "pro": {
+        "name": "PRO",
+        "description": "Para empresas de reparación en crecimiento"
+      },
+      "business": {
+        "name": "EMPRESA",
+        "description": "Para operaciones de reparación a gran escala"
+      }
+    },
+    "features": {
+      "pcs": "PC",
+      "offlineUse": "Funciona sin conexión",
+      "supportEmail": "Soporte por correo electrónico",
+      "backupLocal": "Copia de seguridad local",
+      "historyBasic": "Historial básico",
+      "historyAdv": "Historial avanzado",
+      "supportWhatsApp": "Soporte WhatsApp",
+      "techAdvanced": "Soporte técnico avanzado",
+      "backupCloud": "Copia de seguridad en la nube",
+      "emailClientNotif": "Notificaciones por correo electrónico al cliente"
+    },
+    "choosePlan": "Elegir este plan",
+    "chooseProPlan": "Elegir plan PRO"
+  },
+  "faq": {
+    "title": "¿Aún dudas?",
+    "titleHighlight": "Tus Preguntas, Nuestras Respuestas",
+    "subtitle": "Creemos en la transparencia total. Esto es lo que necesitas saber.",
+    "questions": {
+      "q1": {
+        "question": "¿Por qué una suscripción y no una licencia 'de por vida' más barata?",
+        "answer": "Una licencia 'de por vida' es a menudo una trampa: es válida para una versión congelada del software. Ante un error, una nueva tecnología o una simple necesidad de evolución, estás solo. Nuestra suscripción es una asociación: financia la mejora continua, el soporte receptivo y la garantía de que tu herramienta de trabajo NUNCA quedará obsoleta. No estás comprando un producto, estás invirtiendo en tu tranquilidad y crecimiento."
+      },
+      "q2": {
+        "question": "¿Qué pasa si tengo un problema técnico?",
+        "answer": "Es nuestra mayor fortaleza. Con una licencia de por vida, el soporte suele ser de pago, lento o inexistente. Nuestros suscriptores se benefician de soporte prioritario de WhatsApp con respuesta garantizada en menos de 2 horas. No más estrés: un experto siempre está ahí para desbloquearte y permitirte concentrarte en tus clientes."
+      },
+      "q3": {
+        "question": "¿Están seguros mis datos?",
+        "answer": "Absolutamente. El software instalado localmente es vulnerable al robo y a fallos del ordenador. Corres el riesgo de perderlo todo. Nuestra solución realiza copias de seguridad automáticas y diarias de tus datos en servidores seguros. Es la garantía de que tu activo más valioso, el historial de clientes y reparaciones, siempre está seguro."
+      },
+      "q4": {
+        "question": "¿Cómo funcionan las actualizaciones?",
+        "answer": "Son automáticas, transparentes y están incluidas en tu suscripción. Cada mes, implementamos mejoras, correcciones de seguridad y nuevas funciones, a menudo inspiradas en los comentarios de los usuarios. Tu software se vuelve más potente con el tiempo, sin esfuerzo ni costo adicional de tu parte."
+      }
+    }
+  },
+  "cta": {
+    "title": "¿Listo para Elegir la Tranquilidad?",
+    "titleHighlight": "Únete a los Profesionales",
+    "subtitle": "Únete a la comunidad de profesionales de reparación que eligieron un socio de crecimiento en lugar de solo una herramienta.",
+    "button": "Ver Planes y Comenzar",
+    "supportIncluded": "Soporte incluido",
+    "happyClients": "200+ Clientes satisfechos"
+  },
+  "freeVersion": {
+    "title": "¿Aún dudas?",
+    "titleHighlight": "Prueba una Versión Gratuita",
+    "subtitle": "Disfruta de una versión gratuita con funciones básicas para probar y gestionar tus reparaciones sin costo.",
+    "button": "Probar la versión gratuita"
+  },
+  "footer": {
+    "tagline": "La plataforma moderna de gestión de talleres de reparación diseñada para la eficiencia.",
+    "product": "Producto",
+    "company": "Empresa",
+    "resources": "Recursos",
+    "legal": "Legal",
+    "links": {
+      "features": "Características",
+      "pricing": "Precios",
+      "downloads": "Descargas",
+      "about": "Acerca de",
+      "blog": "Blog",
+      "contact": "Contacto",
+      "documentation": "Documentación",
+      "support": "Soporte",
+      "status": "Estado",
+      "privacy": "Política de privacidad",
+      "terms": "Términos de uso",
+      "cookies": "Política de cookies",
+      "gdpr": "RGPD"
+    },
+    "rights": "Todos los derechos reservados",
+    "createdBy": "Creado por"
+  }
+}
