@@ -40,6 +40,7 @@ const CTASection = dynamic(() => import("@/components/sections/CtaSection").then
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import { useCountryDetection } from "@/hooks/useCountryDetection";
+import { useTranslation } from "@/hooks/useTranslation";
 import { ValuesSection } from "@/components/sections/ValuesSection";
 import { FeaturesSection } from "@/components/sections/FeaturesSection";
 import { HeroSection } from "@/components/sections/HeroSection";
@@ -56,86 +57,6 @@ const decodeHtml = (text: string): string => {
     .replace(/&gt;/g, ">");
 };
 
-const faqs = [
-  {
-    question: "Pourquoi un abonnement et pas une licence 'à vie' moins chère ?",
-    answer:
-      "Une licence 'à vie' est souvent un piège : elle est valable pour une version figée de logiciel. Face à un bug, une nouvelle technologie ou un simple besoin d'évolution, vous êtes seul. Notre abonnement est un partenariat : il finance l&apos;amélioration continue, un support réactif et la garantie que votre outil de travail ne deviendra JAMAIS obsolète. Vous n'achetez pas un produit, vous investissez dans votre tranquillité et votre croissance.",
-  },
-  {
-    question: "Que se passe-t-il si j&apos;ai un problème technique ?",
-    answer:
-      "C&apos;est notre plus grande force. Avec une licence à vie, le support est souvent payant, lent ou inexistant. Nos abonnés bénéficient d'un support prioritaire sur WhatsApp avec une réponse garantie en moins de 2 heures. Fini le stress : un expert est toujours là pour vous débloquer et vous permettre de vous concentrer sur vos clients.",
-  },
-  {
-    question: "Mes données sont-elles en sécurité ?",
-    answer:
-      "Absolument. Un logiciel installé localement est vulnérable au vol, à la panne de votre ordinateur. Vous risquez de tout perdre. Notre solution sauvegarde automatiquement et quotidiennement vos données sur des serveurs sécurisés. C'est l&apos;assurance que votre actif le plus précieux — l&apos;historique de vos clients et réparations — est toujours en sécurité.",
-  },
-  {
-    question: "Comment se passent les mises à jour ?",
-    answer:
-      "Elles sont automatiques, transparentes et incluses dans votre abonnement. Chaque mois, nous déployons des améliorations, des correctifs de sécurité et de nouvelles fonctionnalités, souvent inspirées par les retours de nos utilisateurs. Votre logiciel devient plus performant avec le temps, sans aucun effort ni coût supplémentaire de votre part.",
-  },
-];
-
-const features = [
-  {
-    icon: <Wrench className="w-8 h-8" />,
-    title: "Gestion des réparations",
-    description:
-      "Suivez le statut de chaque réparation, attribuez des techniciens et optimisez votre workflow de A à Z.",
-  },
-  {
-    icon: <Package className="w-8 h-8" />,
-    title: "Gestion des stocks",
-    description:
-      "Surveillez vos niveaux d'inventaire en temps réel, suivez l'utilisation des pièces et évitez les ruptures.",
-  },
-  {
-    icon: <Users className="w-8 h-8" />,
-    title: "Gestion des clients",
-    description:
-      "Conservez un historique complet des clients, de leurs appareils et de toutes leurs réparations passées.",
-  },
-  {
-    icon: <Receipt className="w-8 h-8" />,
-    title: "Facturation simplifiée",
-    description:
-      "Créez des factures et des devis professionnels en quelques clics, personnalisés avec votre logo.",
-  },
-  {
-    icon: <FileText className="w-8 h-8" />,
-    title: "Système de tickets",
-    description:
-      "Générez des tickets de réparation clairs pour vos clients et suivez chaque étape du processus interne.",
-  },
-  {
-    icon: <BellDot className="w-8 h-8" />,
-    title: "Notifications Multicanal",
-    description:
-      "Gardez les clients informés avec des notifications par Email, SMS et WhatsApp pour chaque étape de réparation.",
-  },
-  {
-    icon: <Database className="w-8 h-8" />,
-    title: "Gestion de la casse",
-    description:
-      "Recensez et gérez les pièces d'un téléphone ou appareil en détail, avec suivi des stocks et coûts.",
-  },
-  {
-    icon: <BarChart3 className="w-8 h-8" />,
-    title: "Analytique complète",
-    description:
-      "Accédez à des rapports journaliers et personnalisés par date pour suivre les performances de votre atelier.",
-  },
-  {
-    icon: <Cloud className="w-8 h-8" />,
-    title: "Sauvegarde Cloud",
-    description:
-      "Sauvegardez votre base de données dans le cloud pour protéger vos données contre toute perte accidentelle.",
-  },
-];
-
 export const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_KEY || "");
 
 export default function RPLanding() {
@@ -150,6 +71,7 @@ export function RepairProLanding() {
   const [isContactUsOpen, setContactUsOpen] = useState(false);
   const [selectedCountry, setSelectedCountry] = useState<Countries>("dz");
   const { country, loading, error: countryError } = useCountryDetection();
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (country) {
@@ -162,6 +84,73 @@ export function RepairProLanding() {
   // États pour contrôler la modale de paiement
   const [isPaymentModalOpen, setPaymentModalOpen] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState<Plan | null>(null);
+
+  const faqs = [
+    {
+      question: t("faq.questions.q1.question"),
+      answer: t("faq.questions.q1.answer"),
+    },
+    {
+      question: t("faq.questions.q2.question"),
+      answer: t("faq.questions.q2.answer"),
+    },
+    {
+      question: t("faq.questions.q3.question"),
+      answer: t("faq.questions.q3.answer"),
+    },
+    {
+      question: t("faq.questions.q4.question"),
+      answer: t("faq.questions.q4.answer"),
+    },
+  ];
+
+  const features = [
+    {
+      icon: <Wrench className="w-8 h-8" />,
+      title: t("features.list.repairs.title"),
+      description: t("features.list.repairs.description"),
+    },
+    {
+      icon: <Package className="w-8 h-8" />,
+      title: t("features.list.stock.title"),
+      description: t("features.list.stock.description"),
+    },
+    {
+      icon: <Users className="w-8 h-8" />,
+      title: t("features.list.clients.title"),
+      description: t("features.list.clients.description"),
+    },
+    {
+      icon: <Receipt className="w-8 h-8" />,
+      title: t("features.list.billing.title"),
+      description: t("features.list.billing.description"),
+    },
+    {
+      icon: <FileText className="w-8 h-8" />,
+      title: t("features.list.tickets.title"),
+      description: t("features.list.tickets.description"),
+    },
+    {
+      icon: <BellDot className="w-8 h-8" />,
+      title: t("features.list.notifications.title"),
+      description: t("features.list.notifications.description"),
+    },
+    {
+      icon: <Database className="w-8 h-8" />,
+      title: t("features.list.parts.title"),
+      description: t("features.list.parts.description"),
+    },
+    {
+      icon: <BarChart3 className="w-8 h-8" />,
+      title: t("features.list.analytics.title"),
+      description: t("features.list.analytics.description"),
+    },
+    {
+      icon: <Cloud className="w-8 h-8" />,
+      title: t("features.list.backup.title"),
+      description: t("features.list.backup.description"),
+    },
+  ];
 
   const handleChoosePlan = (plan: Plan) => {
     setSelectedPlan(plan);

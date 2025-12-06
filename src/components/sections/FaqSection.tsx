@@ -1,4 +1,7 @@
+"use client";
+
 import { ChevronDown } from "lucide-react";
+import { useTranslation } from "@/hooks/useTranslation";
 
 export const FAQSection = ({
   faqs,
@@ -14,16 +17,18 @@ export const FAQSection = ({
   decodeHtml: (text: string) => string;
   openFaq: number | null;
 }) => {
+  const { t } = useTranslation();
+
   return (
     <section id="faq" className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-            Vous Hésitez ?
-            <span className="block text-custom-teal mt-2">Vos Questions, Nos Réponses</span>
+            {t("faq.title")}
+            <span className="block text-custom-teal mt-2">{t("faq.titleHighlight")}</span>
           </h2>
           <p className="md:text-xl text-white/70 max-w-3xl mx-auto">
-            Nous croyons en la transparence totale. Voici ce que vous devez savoir.
+            {t("faq.subtitle")}
           </p>
         </div>
         <div className="space-y-4">

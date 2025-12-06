@@ -1,4 +1,7 @@
+"use client";
+
 import React from "react";
+import { useTranslation } from "@/hooks/useTranslation";
 
 export const FeaturesSection = ({
   features,
@@ -9,17 +12,18 @@ export const FeaturesSection = ({
     description: string;
   }[];
 }) => {
+  const { t } = useTranslation();
+
   return (
     <section id="features" className="py-20 px-4 sm:px-6 lg:px-8 bg-white/5 backdrop-blur-sm">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-            Tout ce dont vous avez besoin pour
-            <span className="block text-custom-teal mt-2">Gérer vos Reparations</span>
+            {t("features.title")}
+            <span className="block text-custom-teal mt-2">{t("features.titleHighlight")}</span>
           </h2>
           <p className="md:text-xl text-white/70 max-w-3xl mx-auto">
-            De la prise en charge du client à la facturation, REPAIR PRO gère entièrement votre flux
-            de travail.
+            {t("features.subtitle")}
           </p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

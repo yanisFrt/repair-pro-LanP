@@ -5,6 +5,8 @@ import { Menu, X } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { useGtagEvent } from "@/hooks/useGTagEvent";
+import { useTranslation } from "@/hooks/useTranslation";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { CLICK_LOCATIONS } from "@/utils/analytics";
 
 export const NavBar = () => {
@@ -14,13 +16,14 @@ export const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const trackEvent = useGtagEvent();
+  const { t } = useTranslation();
 
   const navItems = [
-    { name: "Acceuil", href: "/", target: "#" },
-    { name: "Fonctionnalitées", href: "/#features", target: "features" },
-    { name: "Tarifs", href: "/#pricing", target: "pricing" },
-    { name: "Blog", href: "/blog", target: null },
-    { name: "Téléchargements", href: "/download", target: null },
+    { name: t("nav.home"), href: "/", target: "#" },
+    { name: t("nav.features"), href: "/#features", target: "features" },
+    { name: t("nav.pricing"), href: "/#pricing", target: "pricing" },
+    { name: t("nav.blog"), href: "/blog", target: null },
+    { name: t("nav.downloads"), href: "/download", target: null },
   ];
 
   const scrollTo = (target: string) => {
@@ -36,7 +39,7 @@ export const NavBar = () => {
       <div className="max-w-7xl mx-auto">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center gap-2">
             <a href="/" className="flex items-center gap-2">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
@@ -49,7 +52,7 @@ export const NavBar = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center gap-8">
             {navItems.map((item) => {
               if (isRoot && item.target)
                 return (
@@ -58,7 +61,7 @@ export const NavBar = () => {
                     onClick={() => scrollTo(item.target)}
                     className={`
                     transition-colors duration-200 font-medium cursor-pointer
-                  ${item.href === pathname ? "text-custom-teal" : "text-gray-300 hover:text-[#6abbb2]"} 
+                  ${item.href === pathname ? "text-custom-teal" : "text-gray-300 hover:text-[#6abbb2]"}
                   `}
                   >
                     {item.name}
@@ -71,16 +74,20 @@ export const NavBar = () => {
                   href={item.href}
                   className={`
                     transition-colors duration-200 font-medium
-                  ${item.href === pathname ? "text-custom-teal" : "text-gray-300 hover:text-[#6abbb2]"} 
+                  ${item.href === pathname ? "text-custom-teal" : "text-gray-300 hover:text-[#6abbb2]"}
                   `}
                 >
                   {item.name}
                 </a>
               );
             })}
+            <LanguageSwitcher />
           </div>
 
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center gap-4">
+            <div className="md:hidden">
+              <LanguageSwitcher />
+            </div>
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="md:hidden p-2 text-gray-300 hover:text-[#6abbb2] transition-colors duration-200"

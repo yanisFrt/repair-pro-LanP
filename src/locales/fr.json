@@ -1,0 +1,200 @@
+{
+  "common": {
+    "download": "Télécharger",
+    "learnMore": "En savoir plus",
+    "getStarted": "Commencer",
+    "contactUs": "Nous contacter",
+    "loading": "Chargement...",
+    "close": "Fermer",
+    "send": "Envoyer",
+    "cancel": "Annuler",
+    "popular": "Populaire",
+    "year": "An",
+    "month": "Mois",
+    "soonAvailable": "Bientôt"
+  },
+  "nav": {
+    "home": "Accueil",
+    "features": "Fonctionnalités",
+    "pricing": "Tarifs",
+    "blog": "Blog",
+    "downloads": "Téléchargements",
+    "about": "À propos",
+    "contact": "Contact"
+  },
+  "hero": {
+    "badge": "🚀 Le partenaire de croissance pour les réparateurs",
+    "title": "Un Logiciel Qui Évolue",
+    "titleHighlight": "Avec Votre Atelier",
+    "subtitle": "Arrêtez de subir un outil figé. Gérez réparations, stock, clients et factures avec un logiciel toujours à jour, sécurisé et supporté par une équipe dédiée.",
+    "ctaDiscover": "Découvrir nos offres",
+    "ctaFree": "Commencer Gratuitement",
+    "platforms": {
+      "windows": "Windows",
+      "linux": "Linux",
+      "android": "Android (Bientôt)"
+    }
+  },
+  "features": {
+    "title": "Tout ce dont vous avez besoin pour",
+    "titleHighlight": "Gérer vos Reparations",
+    "subtitle": "De la prise en charge du client à la facturation, REPAIR PRO gère entièrement votre flux de travail.",
+    "list": {
+      "repairs": {
+        "title": "Gestion des réparations",
+        "description": "Suivez le statut de chaque réparation, attribuez des techniciens et optimisez votre workflow de A à Z."
+      },
+      "stock": {
+        "title": "Gestion des stocks",
+        "description": "Surveillez vos niveaux d'inventaire en temps réel, suivez l'utilisation des pièces et évitez les ruptures."
+      },
+      "clients": {
+        "title": "Gestion des clients",
+        "description": "Conservez un historique complet des clients, de leurs appareils et de toutes leurs réparations passées."
+      },
+      "billing": {
+        "title": "Facturation simplifiée",
+        "description": "Créez des factures et des devis professionnels en quelques clics, personnalisés avec votre logo."
+      },
+      "tickets": {
+        "title": "Système de tickets",
+        "description": "Générez des tickets de réparation clairs pour vos clients et suivez chaque étape du processus interne."
+      },
+      "notifications": {
+        "title": "Notifications Multicanal",
+        "description": "Gardez les clients informés avec des notifications par Email, SMS et WhatsApp pour chaque étape de réparation."
+      },
+      "parts": {
+        "title": "Gestion de la casse",
+        "description": "Recensez et gérez les pièces d'un téléphone ou appareil en détail, avec suivi des stocks et coûts."
+      },
+      "analytics": {
+        "title": "Analytique complète",
+        "description": "Accédez à des rapports journaliers et personnalisés par date pour suivre les performances de votre atelier."
+      },
+      "backup": {
+        "title": "Sauvegarde Cloud",
+        "description": "Sauvegardez votre base de données dans le cloud pour protéger vos données contre toute perte accidentelle."
+      }
+    }
+  },
+  "values": {
+    "title": "Un Investissement, Pas une Dépense",
+    "titleHighlight": "La Vraie Différence",
+    "subtitle": "Comprenez pourquoi un partenariat continu surpasse de loin un achat unique et risqué.",
+    "lifetime": {
+      "title": "Licence 'à Vie' (Le Piège)",
+      "points": [
+        "Support technique lent, payant ou inexistant.",
+        "Aucune mise à jour, le logiciel devient vite obsolète.",
+        "Vulnérable aux nouveaux bugs et failles de sécurité.",
+        "Données locales : risque de perte totale en cas de panne.",
+        "Vous force à racheter une 'V2' pour toute nouveauté."
+      ]
+    },
+    "subscription": {
+      "title": "Notre Abonnement (Le Partenariat)",
+      "points": [
+        "Support WhatsApp prioritaire et ultra-réactif inclus.",
+        "Mises à jour mensuelles avec de nouvelles fonctionnalités.",
+        "Sécurité et performances constamment améliorées.",
+        "Sauvegardes automatiques et sécurisées de vos données.",
+        "Un outil qui grandit avec vous, sans surcoût."
+      ]
+    }
+  },
+  "pricing": {
+    "title": "Simple et Transparente",
+    "titleHighlight": "Tarification",
+    "subtitle": "Choisissez le plan qui correspond à vos besoins et commencez à transformer votre atelier dès aujourd'hui.",
+    "plans": {
+      "starter": {
+        "name": "STARTER",
+        "description": "Parfait pour débuter"
+      },
+      "pro": {
+        "name": "PRO",
+        "description": "Pour les entreprises de réparation en croissance"
+      },
+      "business": {
+        "name": "BUSINESS",
+        "description": "Pour les opérations de réparation à grande échelle"
+      }
+    },
+    "features": {
+      "pcs": "PC",
+      "offlineUse": "Fonctionne Hors-ligne",
+      "supportEmail": "Support Email",
+      "backupLocal": "Sauvegarde locale",
+      "historyBasic": "Historique Basique",
+      "historyAdv": "Historique Avancé",
+      "supportWhatsApp": "Support Whatsapp",
+      "techAdvanced": "Support Technique avancé",
+      "backupCloud": "Sauvegarde Cloud",
+      "emailClientNotif": "Notifications Email Client"
+    },
+    "choosePlan": "Choisir ce plan",
+    "chooseProPlan": "Choisir le plan PRO"
+  },
+  "faq": {
+    "title": "Vous Hésitez ?",
+    "titleHighlight": "Vos Questions, Nos Réponses",
+    "subtitle": "Nous croyons en la transparence totale. Voici ce que vous devez savoir.",
+    "questions": {
+      "q1": {
+        "question": "Pourquoi un abonnement et pas une licence 'à vie' moins chère ?",
+        "answer": "Une licence 'à vie' est souvent un piège : elle est valable pour une version figée de logiciel. Face à un bug, une nouvelle technologie ou un simple besoin d'évolution, vous êtes seul. Notre abonnement est un partenariat : il finance l'amélioration continue, un support réactif et la garantie que votre outil de travail ne deviendra JAMAIS obsolète. Vous n'achetez pas un produit, vous investissez dans votre tranquillité et votre croissance."
+      },
+      "q2": {
+        "question": "Que se passe-t-il si j'ai un problème technique ?",
+        "answer": "C'est notre plus grande force. Avec une licence à vie, le support est souvent payant, lent ou inexistant. Nos abonnés bénéficient d'un support prioritaire sur WhatsApp avec une réponse garantie en moins de 2 heures. Fini le stress : un expert est toujours là pour vous débloquer et vous permettre de vous concentrer sur vos clients."
+      },
+      "q3": {
+        "question": "Mes données sont-elles en sécurité ?",
+        "answer": "Absolument. Un logiciel installé localement est vulnérable au vol, à la panne de votre ordinateur. Vous risquez de tout perdre. Notre solution sauvegarde automatiquement et quotidiennement vos données sur des serveurs sécurisés. C'est l'assurance que votre actif le plus précieux — l'historique de vos clients et réparations — est toujours en sécurité."
+      },
+      "q4": {
+        "question": "Comment se passent les mises à jour ?",
+        "answer": "Elles sont automatiques, transparentes et incluses dans votre abonnement. Chaque mois, nous déployons des améliorations, des correctifs de sécurité et de nouvelles fonctionnalités, souvent inspirées par les retours de nos utilisateurs. Votre logiciel devient plus performant avec le temps, sans aucun effort ni coût supplémentaire de votre part."
+      }
+    }
+  },
+  "cta": {
+    "title": "Prêt à Choisir la Tranquillité ?",
+    "titleHighlight": "Rejoignez les Pros",
+    "subtitle": "Rejoignez la communauté des réparateurs qui ont choisi un partenaire de croissance plutôt qu'un simple outil.",
+    "button": "Voir les Plans et Démarrer",
+    "supportIncluded": "Support Inclus",
+    "happyClients": "200+ Clients Satisfaits"
+  },
+  "freeVersion": {
+    "title": "Vous hésitez encore?",
+    "titleHighlight": "Tester une Version Gratuite",
+    "subtitle": "Profitez d'une version gratuite avec des fonctionnalités de base pour tester et gérer vos réparations sans frais.",
+    "button": "Essayer la version gratuite"
+  },
+  "footer": {
+    "tagline": "La plateforme moderne de gestion d'atelier de réparation conçue pour l'efficacité.",
+    "product": "Produit",
+    "company": "Entreprise",
+    "resources": "Resources",
+    "legal": "Legal",
+    "links": {
+      "features": "Fonctionnalitées",
+      "pricing": "Tarifs",
+      "downloads": "Téléchargements",
+      "about": "A propos",
+      "blog": "Blog",
+      "contact": "Contact",
+      "documentation": "Documentation",
+      "support": "Support",
+      "status": "Status",
+      "privacy": "Politique de confidentialité",
+      "terms": "Conditions d'utilisation",
+      "cookies": "Politique des cookies",
+      "gdpr": "RGPD"
+    },
+    "rights": "Tous droits réservés",
+    "createdBy": "Créé par"
+  }
+}

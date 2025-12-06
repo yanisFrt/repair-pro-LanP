@@ -1,0 +1,200 @@
+{
+  "common": {
+    "download": "Download",
+    "learnMore": "Learn More",
+    "getStarted": "Get Started",
+    "contactUs": "Contact Us",
+    "loading": "Loading...",
+    "close": "Close",
+    "send": "Send",
+    "cancel": "Cancel",
+    "popular": "Popular",
+    "year": "Year",
+    "month": "Month",
+    "soonAvailable": "Coming Soon"
+  },
+  "nav": {
+    "home": "Home",
+    "features": "Features",
+    "pricing": "Pricing",
+    "blog": "Blog",
+    "downloads": "Downloads",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "hero": {
+    "badge": "🚀 The growth partner for repair professionals",
+    "title": "Software That Evolves",
+    "titleHighlight": "With Your Workshop",
+    "subtitle": "Stop using static tools. Manage repairs, inventory, customers, and invoices with software that's always up-to-date, secure, and backed by a dedicated team.",
+    "ctaDiscover": "Discover our offers",
+    "ctaFree": "Start for Free",
+    "platforms": {
+      "windows": "Windows",
+      "linux": "Linux",
+      "android": "Android (Coming Soon)"
+    }
+  },
+  "features": {
+    "title": "Everything you need to",
+    "titleHighlight": "Manage Your Repairs",
+    "subtitle": "From customer intake to billing, REPAIR PRO manages your entire workflow.",
+    "list": {
+      "repairs": {
+        "title": "Repair Management",
+        "description": "Track the status of each repair, assign technicians, and optimize your workflow from A to Z."
+      },
+      "stock": {
+        "title": "Inventory Management",
+        "description": "Monitor your inventory levels in real-time, track parts usage, and avoid stockouts."
+      },
+      "clients": {
+        "title": "Customer Management",
+        "description": "Keep a complete history of customers, their devices, and all past repairs."
+      },
+      "billing": {
+        "title": "Simplified Billing",
+        "description": "Create professional invoices and quotes in just a few clicks, customized with your logo."
+      },
+      "tickets": {
+        "title": "Ticket System",
+        "description": "Generate clear repair tickets for your customers and track every step of the internal process."
+      },
+      "notifications": {
+        "title": "Multi-Channel Notifications",
+        "description": "Keep customers informed with notifications via Email, SMS, and WhatsApp for each repair stage."
+      },
+      "parts": {
+        "title": "Parts Management",
+        "description": "Catalog and manage phone or device parts in detail, with inventory and cost tracking."
+      },
+      "analytics": {
+        "title": "Complete Analytics",
+        "description": "Access daily and custom reports by date to track your workshop's performance."
+      },
+      "backup": {
+        "title": "Cloud Backup",
+        "description": "Back up your database in the cloud to protect your data from accidental loss."
+      }
+    }
+  },
+  "values": {
+    "title": "An Investment, Not an Expense",
+    "titleHighlight": "The Real Difference",
+    "subtitle": "Understand why an ongoing partnership far surpasses a one-time, risky purchase.",
+    "lifetime": {
+      "title": "Lifetime License (The Trap)",
+      "points": [
+        "Slow, paid, or non-existent technical support.",
+        "No updates, software becomes obsolete quickly.",
+        "Vulnerable to new bugs and security flaws.",
+        "Local data: risk of total loss in case of failure.",
+        "Forces you to buy a 'V2' for any new features."
+      ]
+    },
+    "subscription": {
+      "title": "Our Subscription (The Partnership)",
+      "points": [
+        "Priority WhatsApp support, ultra-responsive included.",
+        "Monthly updates with new features.",
+        "Constantly improved security and performance.",
+        "Automatic and secure backups of your data.",
+        "A tool that grows with you, no extra cost."
+      ]
+    }
+  },
+  "pricing": {
+    "title": "Simple and Transparent",
+    "titleHighlight": "Pricing",
+    "subtitle": "Choose the plan that fits your needs and start transforming your workshop today.",
+    "plans": {
+      "starter": {
+        "name": "STARTER",
+        "description": "Perfect to get started"
+      },
+      "pro": {
+        "name": "PRO",
+        "description": "For growing repair businesses"
+      },
+      "business": {
+        "name": "BUSINESS",
+        "description": "For large-scale repair operations"
+      }
+    },
+    "features": {
+      "pcs": "PC",
+      "offlineUse": "Works Offline",
+      "supportEmail": "Email Support",
+      "backupLocal": "Local Backup",
+      "historyBasic": "Basic History",
+      "historyAdv": "Advanced History",
+      "supportWhatsApp": "WhatsApp Support",
+      "techAdvanced": "Advanced Technical Support",
+      "backupCloud": "Cloud Backup",
+      "emailClientNotif": "Customer Email Notifications"
+    },
+    "choosePlan": "Choose this plan",
+    "chooseProPlan": "Choose PRO plan"
+  },
+  "faq": {
+    "title": "Still Hesitating?",
+    "titleHighlight": "Your Questions, Our Answers",
+    "subtitle": "We believe in total transparency. Here's what you need to know.",
+    "questions": {
+      "q1": {
+        "question": "Why a subscription and not a cheaper 'lifetime' license?",
+        "answer": "A 'lifetime' license is often a trap: it's valid for a frozen version of the software. When faced with a bug, new technology, or a simple need for evolution, you're on your own. Our subscription is a partnership: it finances continuous improvement, responsive support, and the guarantee that your work tool will NEVER become obsolete. You're not buying a product, you're investing in your peace of mind and growth."
+      },
+      "q2": {
+        "question": "What happens if I have a technical problem?",
+        "answer": "It's our greatest strength. With a lifetime license, support is often paid, slow, or non-existent. Our subscribers benefit from priority WhatsApp support with a guaranteed response in less than 2 hours. No more stress: an expert is always there to unblock you and let you focus on your customers."
+      },
+      "q3": {
+        "question": "Is my data secure?",
+        "answer": "Absolutely. Locally installed software is vulnerable to theft and computer failure. You risk losing everything. Our solution automatically and daily backs up your data on secure servers. It's the assurance that your most valuable asset — your customer and repair history — is always safe."
+      },
+      "q4": {
+        "question": "How do updates work?",
+        "answer": "They're automatic, transparent, and included in your subscription. Every month, we deploy improvements, security fixes, and new features, often inspired by user feedback. Your software becomes more powerful over time, with no effort or additional cost on your part."
+      }
+    }
+  },
+  "cta": {
+    "title": "Ready to Choose Peace of Mind?",
+    "titleHighlight": "Join the Pros",
+    "subtitle": "Join the community of repair professionals who chose a growth partner rather than just a tool.",
+    "button": "View Plans and Get Started",
+    "supportIncluded": "Support Included",
+    "happyClients": "200+ Satisfied Customers"
+  },
+  "freeVersion": {
+    "title": "Still hesitating?",
+    "titleHighlight": "Try a Free Version",
+    "subtitle": "Enjoy a free version with basic features to test and manage your repairs at no cost.",
+    "button": "Try the free version"
+  },
+  "footer": {
+    "tagline": "The modern repair shop management platform designed for efficiency.",
+    "product": "Product",
+    "company": "Company",
+    "resources": "Resources",
+    "legal": "Legal",
+    "links": {
+      "features": "Features",
+      "pricing": "Pricing",
+      "downloads": "Downloads",
+      "about": "About",
+      "blog": "Blog",
+      "contact": "Contact",
+      "documentation": "Documentation",
+      "support": "Support",
+      "status": "Status",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Use",
+      "cookies": "Cookie Policy",
+      "gdpr": "GDPR"
+    },
+    "rights": "All rights reserved",
+    "createdBy": "Created by"
+  }
+}
